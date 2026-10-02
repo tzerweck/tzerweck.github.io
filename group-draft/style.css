@@ -160,8 +160,8 @@ h2 { margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spa
 .tag { font-size: 13.5px; font-weight: 600; color: var(--muted); }
 .tbd { font-weight: 500; color: var(--muted); }
 .sem-more { margin: 0; }
-.sem-more > summary { margin-top: 4px; }
-.sem-more[open] > summary { margin-bottom: 0; }
+.sem-more > summary { margin-top: 12px; }
+.sem-more[open] > summary { margin-bottom: 8px; }
 @media (max-width: 640px) { .sem li { grid-template-columns: 1fr; gap: 2px; } }
 
 footer { max-width: var(--wrap); margin: 48px auto 0; padding: 26px 32px 48px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
