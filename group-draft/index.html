@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quantum AI Lab, ETH Zurich (draft, version 2: Spin field)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#top">Quantum AI Lab</a>
+  <nav aria-label="Sections"><a href="#research">Research</a><a href="#people">People</a><a href="#papers">Papers</a><a href="#teaching">Teaching</a><a href="#events">Events</a><a href="#join">Join us</a></nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="intro">
+      <h1>Quantum AI Lab</h1>
+      <p class="sub">The group of Juan Carrasquilla at the Institute for Theoretical Physics, ETH Zurich.</p>
+      <p class="lede">We work where computational quantum many-body physics meets machine learning. Much of our work develops neural-network quantum states and variational Monte Carlo for ground states, excited states, finite temperature and real-time dynamics. We also design algorithms for quantum computers.</p>
+      <div class="control">
+        <label for="temp">Temperature <output id="tval" for="temp">T = 0.89 J</output></label>
+        <input id="temp" type="range" min="0.30" max="1.60" step="0.01" value="0.89" list="marks">
+        <datalist id="marks"><option value="0.30"><option value="0.89"><option value="1.60"></datalist>
+        <div class="marks" aria-hidden="true"><span>Ordered</span><span>Transition</span><span>Disordered</span></div>
+      </div>
+    </div>
+    <figure class="field">
+      <canvas id="field" role="img" aria-label="Live Monte Carlo simulation of the XY model. Each line is a spin; its colour shows its direction."></canvas>
+      <figcaption>Live simulation of the XY model on a square lattice (Metropolis Monte Carlo). Each line is a spin, coloured by its direction. Below about 0.89 J vortices stay bound in pairs; above it they unbind. Drag across the field or use the slider to change the temperature.</figcaption>
+    </figure>
+  </section>
+
+  <section id="research" class="block">
+    <h2>Research</h2>
+    <div class="content">
+      <p class="big">Two questions guide the group. How can we best simulate strongly correlated quantum systems with both classical and quantum computers? Can we automate parts of the scientific process itself?</p>
+      <ul class="topics"><li style="--a:12deg;--c:rgb(166,180,203)">Neural-network quantum states</li><li style="--a:38deg;--c:rgb(108,130,188)">Variational Monte Carlo</li><li style="--a:64deg;--c:rgb(87,71,158)">Quantum dynamics</li><li style="--a:90deg;--c:rgb(64,32,94)">Quantum algorithms</li><li style="--a:116deg;--c:rgb(66,24,58)">Non-Hermitian systems</li><li style="--a:142deg;--c:rgb(122,40,64)">Lattice gauge theories</li><li style="--a:168deg;--c:rgb(173,78,71)">Density functional theory</li></ul>
+    </div>
+  </section>
+
+  <section id="people" class="block">
+    <h2>People</h2>
+    <div class="content">
+      <div class="leader">
+        <a href="https://www.phys.ethz.ch/the-department/people/person-detail.jcarrasquill.html" class="lface"><img src="img/carrasquilla.jpg" alt="Photo of Juan Carrasquilla" width="480" height="480"></a>
+        <div>
+          <h3 class="lname">Juan Carrasquilla</h3>
+          <p class="lrole">Associate Professor of Computational Physics</p>
+          <p>Juan works at the intersection of condensed matter theory, quantum computing and machine learning. Much of his research develops and uses large-scale numerical simulations for problems in quantum many-body physics and quantum computing.</p>
+          <p><a href="https://www.phys.ethz.ch/the-department/people/person-detail.jcarrasquill.html">ETH page</a></p>
+        </div>
+      </div>
+      <div class="pgroup">
+        <h3>Researchers and fellows</h3>
+        <ul class="lattice">
+        <li class="site" style="--ring:rgb(141,160,197)">
+          <a href="https://itp.phys.ethz.ch/people/person-detail.MzcwNTMx.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html" class="face"><img src="img/barison.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://itp.phys.ethz.ch/people/person-detail.MzcwNTMx.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">Stefano Barison</a></h4>
+          <p>Researcher, also with IBM Research Europe in Zurich</p>
+          <p class="lk"><a href="https://itp.phys.ethz.ch/people/person-detail.MzcwNTMx.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">ETH page</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(108,131,188)">
+          <a href="https://matematija.github.io/" class="face"><img src="img/medvidovic.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://matematija.github.io/">Matija Medvidović</a></h4>
+          <p>Postdoctoral researcher</p>
+          <p class="lk"><a href="https://matematija.github.io/">Website</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(96,94,175)">
+          <a href="https://jannesnys.com/" class="face"><img src="img/nys.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://jannesnys.com/">Jannes Nys</a></h4>
+          <p>Senior researcher</p>
+          <p class="lk"><a href="https://jannesnys.com/">Website</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(84,63,147)">
+          <a href="https://collegium.ethz.ch/fellows/fellow-year-2026-2027/benjamin-schiffer" class="face"><img src="img/schiffer.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://collegium.ethz.ch/fellows/fellow-year-2026-2027/benjamin-schiffer">Benjamin Schiffer</a></h4>
+          <p>Early-Career Fellow, Collegium Helveticum (2026–2027)</p>
+          <p class="lk"><a href="https://collegium.ethz.ch/fellows/fellow-year-2026-2027/benjamin-schiffer">Fellow page</a></p>
+        </li>
+        </ul>
+      </div>
+      <div class="pgroup">
+        <h3>Doctoral students</h3>
+        <ul class="lattice">
+        <li class="site" style="--ring:rgb(71,36,109)">
+          <a href="https://bartonbrandon.github.io/" class="face"><img src="img/barton.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://bartonbrandon.github.io/">Brandon Barton</a></h4>
+          <p>Doctoral student</p>
+          <p class="lk"><a href="https://bartonbrandon.github.io/">Website</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(55,25,72)">
+          <a href="https://itp.phys.ethz.ch/people/person-detail.MjI4MTQ0.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html" class="face"><img src="img/danna.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://itp.phys.ethz.ch/people/person-detail.MjI4MTQ0.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">Matteo D'Anna</a></h4>
+          <p>Doctoral student</p>
+          <p class="lk"><a href="https://itp.phys.ethz.ch/people/person-detail.MjI4MTQ0.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">ETH page</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(62,23,57)">
+          <a href="https://itp.phys.ethz.ch/people/person-detail.MzU3MTg2.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html" class="face"><span class="nophoto">ZF</span></a>
+          <h4><a href="https://itp.phys.ethz.ch/people/person-detail.MzU3MTg2.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">Zahra Farahmand</a></h4>
+          <p>Doctoral student</p>
+          <p class="lk"><a href="https://itp.phys.ethz.ch/people/person-detail.MzU3MTg2.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">ETH page</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(93,29,64)">
+          <a href="https://itp.phys.ethz.ch/people/person-detail.MzM5NDU2.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html" class="face"><img src="img/jreissaty.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://itp.phys.ethz.ch/people/person-detail.MzM5NDU2.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">Andrew Jreissaty</a></h4>
+          <p>Doctoral student</p>
+          <p class="lk"><a href="https://itp.phys.ethz.ch/people/person-detail.MzM5NDU2.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">ETH page</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(128,43,64)">
+          <a href="https://itp.phys.ethz.ch/people/person-detail.MzEyMzIy.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html" class="face"><img src="img/mohr.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://itp.phys.ethz.ch/people/person-detail.MzEyMzIy.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">Vinícius Mohr</a></h4>
+          <p>Doctoral student</p>
+          <p class="lk"><a href="https://itp.phys.ethz.ch/people/person-detail.MzEyMzIy.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">ETH page</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(160,63,67)">
+          <a href="https://itp.phys.ethz.ch/people/person-detail.MzYxMTk4.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html" class="face"><img src="img/wilke.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://itp.phys.ethz.ch/people/person-detail.MzYxMTk4.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">Reja Wilke</a></h4>
+          <p>Doctoral student</p>
+          <p class="lk"><a href="https://itp.phys.ethz.ch/people/person-detail.MzYxMTk4.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">ETH page</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(184,91,74)">
+          <a href="https://tzerweck.github.io/" class="face"><img src="img/zerweck.jpg" alt="" width="480" height="480" loading="lazy"></a>
+          <h4><a href="https://tzerweck.github.io/">Tristan Zerweck</a></h4>
+          <p>Doctoral student</p>
+          <p class="lk"><a href="https://tzerweck.github.io/">Website</a></p>
+        </li>
+        <li class="site" style="--ring:rgb(200,128,104)">
+          <a href="https://itp.phys.ethz.ch/people/person-detail.MzMzOTk0.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html" class="face"><span class="nophoto">HZ</span></a>
+          <h4><a href="https://itp.phys.ethz.ch/people/person-detail.MzMzOTk0.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">Hang Zhang</a></h4>
+          <p>Doctoral student</p>
+          <p class="lk"><a href="https://itp.phys.ethz.ch/people/person-detail.MzMzOTk0.TGlzdC84NDYsLTE5MDQ4MDM5ODI=.html">ETH page</a></p>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="papers" class="block">
+    <h2>Papers</h2>
+    <div class="content">
+      <p class="note">All papers by current group members, collected from each member's Google Scholar profile and arXiv listing on 1 October 2026, including work from before they joined the group. Listed by year of publication (preprints by arXiv year), most cited first; each year shows five, the rest open with More. The excerpts are quoted from the abstracts. Papers from before 2016 open with the button at the end of the list.</p>
+      <div class="year">
+        <h3 class="yn">2026<span class="cnt">25 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2409.16346">Scalable quantum dynamics compilation via quantum machine learning</a></h4>
+            <p class="au">Yuxuan Zhang, Roeland Wiersema, <strong>Juan Carrasquilla</strong>, Lukasz Cincio, Yong Baek Kim</p>
+            <p class="ve"><a href="https://doi.org/10.1103/wswv-nq6d">Phys. Rev. Research 8, 023128 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2409.16346">arXiv:2409.16346</a></p>
+            <p class="ex">In this work, we explore the potential of a VQC scheme by making use of out-of-distribution generalization results in quantum machine learning (QML): By learning the action of a given many-body dynamics on a small data set of product states, we can obtain a unitary circuit that generalizes to highly entangled states such as the Haar random states. For the first time, we extend VQC to systems on two-dimensional (2D) strips with a quasi-1D treatment, demonstrating a significant resource advantage over standard Trotterization methods, highlighting the method's promise for advancing quantum simulation tasks on near-term quantum processors.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2510.15630">Distributed quantum information processing: a review of recent progress</a></h4>
+            <p class="au">Johannes Knörzer, Xiaoyu Liu, <strong>Benjamin F. Schiffer</strong>, Jordi Tura</p>
+            <p class="ve"><a href="https://doi.org/10.1088/1361-6633/ae74e0">Rep. Prog. Phys. 89, 074401 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2510.15630">arXiv:2510.15630</a></p>
+            <p class="ex">In this review, we contextualize recent developments by surveying the theoretical foundations of distributed quantum protocols and examining the experimental platforms and algorithmic applications that realize them in practice.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2507.03516">A molecule with half-Möbius topology</a></h4>
+            <p class="au">Igor Roncevic, Fabian Paschke, Yueze Gao, …, <strong>Stefano Barison</strong>, … (13 authors)</p>
+            <p class="ve"><a href="https://doi.org/10.1126/science.aea3321">Science 392, eaea3321 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2507.03516">arXiv:2507.03516</a></p>
+            <p class="ex">We demonstrate reversible switching of the topology, between the two singlets of oppositely threaded half-Möbius topology, and the planar, topologically trivial, triplet state. Multireference calculations, including large-scale sample-based ab initio calculations executed on quantum hardware, reveal that the switching is associated with a helical pseudo Jahn-Teller effect.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2511.02809">Majorana string simulation of nonequilibrium dynamics in two-dimensional lattice fermion systems</a></h4>
+            <p class="au"><strong>Matteo D'Anna</strong>, <strong>Jannes Nys</strong>, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/f6mn-jc3r">Phys. Rev. B 114, 034305 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2511.02809">arXiv:2511.02809</a></p>
+            <p class="ex">Here we introduce a Heisenberg-picture algorithm that propagates observables expressed in a Majorana-string basis using a truncation scheme that preserves Trotter accuracy and aims at maintaining computational efficiency. We benchmark our approach on one- and two-dimensional Fermi-Hubbard quenches, comparing against tensor network methods (MPS and fPEPS) and recent experimental data.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2503.14502">Precise Quantum Chemistry calculations with few Slater Determinants</a></h4>
+            <p class="au">Clemens Giuliani, <strong>Jannes Nys</strong>, Rocco Martinazzo, Giuseppe Carleo, Riccardo Rossi</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41467-026-70255-z">Nat. Commun. 17, 5613 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2503.14502">arXiv:2503.14502</a></p>
+            <p class="ex">In this work, we show that a variational wavefunction composed of a few hundred optimized non-orthogonal determinants can achieve energy accuracies comparable to the state of the art. We benchmark the accuracy of the proposed method with exact full-configuration interaction results where available, and we achieve lower variational energies than coupled cluster (CCSD(T)) for several molecules in the double-zeta basis.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 20 more from 2026</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2512.06768">Real-Time Dynamics in Two Dimensions with Tensor Network States via Time-Dependent Variational Monte Carlo Method</a></h4>
+            <p class="au">Yantao Wu, <strong>Jannes Nys</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/tggc-8fjx">PRX Quantum 7, 033035 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2512.06768">arXiv:2512.06768</a></p>
+            <p class="ex">In this work, we overcome this barrier for low-energy quantum dynamics by developing a stable and efficient time-dependent variational Monte Carlo (tVMC) framework for PEPS. All simulations are performed on &gt;= 10 x 10 lattices with evolution times beyond T = 10 using modest computational resources.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2508.01072">Biorthogonal Neural Network Approach to 2D Non-Hermitian Systems</a></h4>
+            <p class="au">Massimo Solinas, <strong>Brandon Barton</strong>, Yuxuan Zhang, <strong>Jannes Nys</strong>, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/3kk2-3fsj">Phys. Rev. Lett. 136, 126501 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2508.01072">arXiv:2508.01072</a></p>
+            <p class="ex">Due to the breakdown of the Rayleigh-Ritz variational principle in non-Hermitian settings, we develop a self-consistent symmetric optimization framework based on variance minimization with a dynamically updated energy estimate. Tested on a two-dimensional non-Hermitian transverse field Ising model endowed with a complex longitudinal field, our method achieves high accuracy across both parity-time symmetric and broken phases.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2509.12365">Entanglement and optimization within autoregressive neural quantum states</a></h4>
+            <p class="au"><strong>Andrew Jreissaty</strong>, <strong>Hang Zhang</strong>, Jairo C. Quijano, <strong>Juan Carrasquilla</strong>, Roeland Wiersema</p>
+            <p class="ve"><a href="https://doi.org/10.1103/t2cg-kr7y">Phys. Rev. Research 8, 013147 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2509.12365">arXiv:2509.12365</a></p>
+            <p class="ex">We perform large-scale simulations of ensembles of random autoregressive wavefunctions for chains of up to 256 spins and uncover signatures of transitions in their average entanglement scaling, entanglement spectra, and correlation functions. We show that the standard softmax normalization of the wavefunction suppresses entanglement and fluctuations, and introduce a square modulus normalization function that restores them.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2509.12323">Accurate ground states of SU(2) lattice gauge theory in 2+1D and 3+1D</a></h4>
+            <p class="au">Thomas Spriggs, Eliska Greplova, <strong>Juan Carrasquilla</strong>, <strong>Jannes Nys</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/wsk2-qcvy">Phys. Rev. Lett. 136, 101902 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2509.12323">arXiv:2509.12323</a></p>
+            <p class="ex">We present a neural network wavefunction framework for solving non-Abelian lattice gauge theories in a continuous group representation. Using a combination of SU(2) equivariant neural networks alongside an SU(2) invariant, physics-inspired ansatz, we learn a parameterization of the ground state wavefunction of SU(2) lattice gauge theory in 2+1 and 3+1 dimensions.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2510.15030">Adiabatic Transport of Neural Network Quantum States</a></h4>
+            <p class="au"><strong>Matija Medvidović</strong>, Alev Orfi, <strong>Juan Carrasquilla</strong>, Dries Sels</p>
+            <p class="ve"><a href="https://doi.org/10.1103/khy4-5v68">PRX Intelligence 1, 013020 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2510.15030">arXiv:2510.15030</a></p>
+            <p class="ex">We introduce a first-principles method for building neural network representations of many-body excited states by adiabatically continuing eigenstates of simple Hamiltonians into the strongly correlated regime. With controlled access to the full many-body gap, we obtain accurate estimates of critical exponents.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2505.22734">Connectivity determines the capability of sparse neural network quantum states</a></h4>
+            <p class="au"><strong>Brandon Barton</strong>, <strong>Juan Carrasquilla</strong>, Christopher Roth, Agnes Valenti</p>
+            <p class="ve"><a href="https://doi.org/10.1088/2632-2153/ae62c9">Mach. Learn.: Sci. Technol. 7, 035025 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2505.22734">arXiv:2505.22734</a></p>
+            <p class="ex">Focusing on two representative quantum Hamiltonians, the transverse field Ising model (TFIM) and the toric code (TC), we demonstrate that sparse neural networks can reach accuracies comparable to their dense counterparts, even when pruned by more than an order of magnitude in parameter count. Finally, we demonstrate that pruning enhances interpretability by linking the structure of sparse subnetworks to the underlying physics of the Hamiltonian.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2510.05228">CMT-Benchmark: A Benchmark for Condensed Matter Theory Built by Expert Researchers</a></h4>
+            <p class="au">Haining Pan, James V. Roggeveen, Erez Berg, …, <strong>Juan Carrasquilla</strong>, … (19 authors)</p>
+            <p class="ve">ICLR 2026<span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2510.05228">arXiv:2510.05228</a></p>
+            <p class="ex">To fill this gap, we present CMT-Benchmark, a dataset of 50 problems covering condensed matter theory (CMT) at the level of an expert researcher. Our evaluations show that frontier models struggle with all of the problems in the dataset, highlighting a gap in the physical reasoning skills of current LLMs.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2506.03146">Topology meets symmetry breaking: Hidden order, intrinsically gapless topological states, and finite-temperature topological transitions</a></h4>
+            <p class="au"><strong>Reja H. Wilke</strong>, Henning Schlömer, Simon M. Linsel, Annabelle Bohrdt, Fabian Grusdt</p>
+            <p class="ve"><a href="https://doi.org/10.1103/5zjl-j7ms">Phys. Rev. B 113, 245131 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2506.03146">arXiv:2506.03146</a></p>
+            <p class="ex">Here we introduce an explicit construction for SPT-type states with hidden order associated with SSB: They feature (quasi) long-range correlations along appropriate edges, but short-range order in the bulk; ground state degeneracy associated with SSB; and non-local string order in the bulk. We apply our construction to predict two types of finite-temperature SPT transitions, in the Ising and BKT class respectively, where the usual signs of criticality appear despite the absence of a diverging correlation length in the bulk.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2606.07825">Projected Inverse Iteration: An Eigenvalue Approach to Ground-State Computation with Neural Quantum States</a></h4>
+            <p class="au"><strong>Hang Zhang</strong>, Victor Armegioiu, <strong>Juan Carrasquilla</strong>, Siddhartha Mishra, Johannes Müller, <strong>Jannes Nys</strong>, Marius Zeinhofer</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2606.07825">arXiv:2606.07825</a></p>
+            <p class="ex">Here, we introduce Projected Inverse Iteration (PII) by re-framing the ground-state search as an eigenvalue problem. PII achieves rapid, gap-insensitive convergence while preserving the favorable polynomial computational scaling of stochastic reconfiguration.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2603.08696">Exploring pathways towards quantum advantage in quantum chemistry: the case of a molecule with half-Möbius topology</a></h4>
+            <p class="au">Samuele Piccinelli, <strong>Stefano Barison</strong>, Alberto Baiardi, Francesco Tacchino, Jascha Repp, Igor Rončević, Florian Albrecht, Harry L. Anderson, Leo Gross, Alessandro Curioni, Ivano Tavernelli</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2603.08696">arXiv:2603.08696</a></p>
+            <p class="ex">We report quantum chemistry calculations performed on superconducting quantum processors for a molecule exhibiting the half-Möbius electronic topology originally introduced by Rončević et al. Using SqDRIFT, a randomized sample-based Krylov quantum diagonalization algorithm, we achieve reliable quantum simulations on active spaces corresponding to 36 orbitals (72 qubits) and extend previous studies up to 50 orbitals (100 qubits).</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2603.02040">On-surface synthesis and aromaticity of large cyclocarbons</a></h4>
+            <p class="au">Lisanne Sellies, Marco Vitek, Yueze Gao, …, <strong>Stefano Barison</strong>, … (15 authors)</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2603.02040">arXiv:2603.02040</a></p>
+            <p class="ex">Here, we synthesized large cyclo[N]carbons, with N up to 88, by tip-induced chemistry on a NaCl surface and studied their aromaticity by measuring their transport gaps by scanning tunnelling spectroscopy. We first generated C20 and C22, and then fused multiple cyclocarbons [5-7] by means of atom manipulation, obtaining C42, C44, C46, C66 and C88.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2508.09371">Discovery of energy landscapes toward optimized quantum transport: Environmental effects and long-range tunneling</a></h4>
+            <p class="au">Maggie Lawrence, Matthew Pocrnic, Erin Fung, <strong>Juan Carrasquilla</strong>, Erik M. Gauger, Dvira Segal</p>
+            <p class="ve"><a href="https://doi.org/10.1103/ckfp-6jtd">Phys. Rev. Research 8, 013163 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2508.09371">arXiv:2508.09371</a></p>
+            <p class="ex">In this work, we identify classes of quasi-one-dimensional chains with energy profiles that optimize carrier transport under such influences. Our analysis reveals that different types of energy landscapes enhance transport, depending on whether inter-site tunneling couplings in the chain are short- or long-range, the existence of environmental interactions, and the temperature of the environment.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2609.09280">Multipole splats for optimized and inverted effective potentials</a></h4>
+            <p class="au"><strong>Matija Medvidović</strong>, Angel Rubio, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2609.09280">arXiv:2609.09280</a></p>
+            <p class="ex">Here, we introduce multipole splats, a class of trial potentials that carry the correct asymptotic decay required to support the unoccupied spectrum. The resulting solver allows us to resolve spatial profiles of exchange-correlation potential errors during molecular dissociation and accurately reconstruct key excited states without empirical asymptotic corrections.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2604.05973">Distributions of noisy expectation values over sets of measurement operators</a></h4>
+            <p class="au">Matthew Duschenes, Roger G. Melko, <strong>Juan Carrasquilla</strong>, Raymond Laflamme</p>
+            <p class="ve"><a href="https://doi.org/10.1103/qp99-qqgy">Phys. Rev. A 114, 022434 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2604.05973">arXiv:2604.05973</a></p>
+            <p class="ex">When quantum states are randomly distributed, their expectation values are also randomly distributed. We proceed to construct empirical distributions of simulated Haar random brickwork quantum circuits with local depolarizing noise, and compare their form to a proposed effective global-depolarizing-like model with variable effective noise scales and environment dimensions.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2605.07779">Neural network quantum states in the grand canonical ensemble</a></h4>
+            <p class="au">Anton Hul, <strong>Matija Medvidović</strong>, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2605.07779">arXiv:2605.07779</a></p>
+            <p class="ex">In this paper, we propose a neural quantum state architecture capable of representing symmetric bosonic wavefunctions in Fock space, enabling the study of systems with variable particle number. Our approach enables accurate estimates of one-body reduced density matrices, opening access to observables such as condensate fractions and radial density profiles from first principles.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2609.31483">Scaling Density Functional Theory with Gaussian Splatting</a></h4>
+            <p class="au">Andrés Guzmán-Cordero, Cindy Zhang, Majdi Hassan, Marta Skreta, Kirill Neklyudov, <strong>Matija Medvidović</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2609.31483">arXiv:2609.31483</a></p>
+            <p class="ex">We propose Gaussian Splatting for Density Functional Theory (GS-DFT), which represents molecular orbitals as a cloud of Gaussians whose positions, shapes, and mixing coefficients are optimized jointly by gradient descent to minimize the energy without training data. The resulting solver exhibits quadratic peak memory scaling in the cloud size, allowing us to simulate systems of up to 2,742 atoms (10,406 electrons) without any modifications at triple-zeta scale using a single four-GPU node.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2607.26660">Entanglement signatures of topological phase transitions in a dirty Weyl semimetal</a></h4>
+            <p class="au"><strong>Vinícius Mohr</strong>, Shunji Tsuchiya, Andras Szabo</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2607.26660">arXiv:2607.26660</a></p>
+            <p class="ex">Two distinct ways to destroy the topology of the Weyl nodes are through pairwise annihilation in momentum space or by sufficiently strong disorder that eliminates the quasiparticle pole, driving the system into a non-Fermi-liquid diffusive-metallic state. In this work, we study the evolution of entanglement spectrum and entanglement entropy of a dirty WSM as it undergoes these two topological transitions.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2606.27249">Quantum computer architecture with ions in tweezer arrays</a></h4>
+            <p class="au"><strong>Benjamin F. Schiffer</strong>, Christopher Monroe, Peter Zoller, J. Ignacio Cirac</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2606.27249">arXiv:2606.27249</a></p>
+            <p class="ex">We propose a quantum computer architecture based on ions confined in optical tweezer arrays, combining the long coherence times of trapped-ion qubits with the reconfigurability and parallel operation enabled by tweezer platforms. Selected ions are transported to local interaction zones, where excitation to an auxiliary state with a displaced optical potential generates a controllable effective electric dipole.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2605.17067">Near-Optimal Quantum Time Evolution Circuits via Provably Convergent Compression</a></h4>
+            <p class="au">Erenay Karacan, Isabel Nha Minh Le, <strong>Matteo D'Anna</strong>, <strong>Juan Carrasquilla</strong>, Christian B. Mendl, Ivan Rojkov</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2605.17067">arXiv:2605.17067</a></p>
+            <p class="ex">In this work, we provide a recipe for choosing the initial point of such variational optimizations that guarantees convergence to a quantum circuit with near-optimal gate complexity […] for all local and translationally invariant Hamiltonians. We demonstrate our method by encoding the globally controlled time evolution of a Heisenberg antiferromagnet on a Kagome lattice.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2509.01637">Phase-Sensitive Measurements on a Fermi–Hubbard Quantum Processor</a></h4>
+            <p class="au">Alberto R. Cavallar, Luis Escalera-Moreno, Titus Franz, Timon Hilker, J. Ignacio Cirac, Philipp M. Preiss, <strong>Benjamin F. Schiffer</strong></p>
+            <p class="ve"><a href="https://doi.org/10.22331/q-2026-05-12-2103">Quantum 10, 2103 (2026)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2509.01637">arXiv:2509.01637</a></p>
+            <p class="ex">In this work, we study a hardware-efficient protocol for measuring complex expectation values of the time-evolution operator, commonly referred to as Loschmidt echoes, with fermions in an optical superlattice. We analyze the algorithm for the Fermi-Hubbard model at half-filling as well as at finite doping.</p>
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2025<span class="cnt">31 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2403.00910">Beyond-classical computation in quantum simulation</a></h4>
+            <p class="au">Andrew D. King, Alberto Nocera, Marek M. Rams, …, <strong>Juan Carrasquilla</strong>, … (63 authors)</p>
+            <p class="ve"><a href="https://doi.org/10.1126/science.ado6285">Science 388, 199–204 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2403.00910">arXiv:2403.00910</a></p>
+            <p class="ex">Here, we show that superconducting quantum annealing processors can rapidly generate samples in close agreement with solutions of the Schrödinger equation. We show that several leading approximate methods based on tensor networks and neural networks cannot achieve the same accuracy as the quantum annealer within a reasonable time frame.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2204.04198">Machine Learning in Quantum Sciences (book)</a></h4>
+            <p class="au">Anna Dawid, Julian Arnold, Borja Requena, …, <strong>Juan Carrasquilla</strong>, … (29 authors)</p>
+            <p class="ve"><a href="https://doi.org/10.1017/9781009504942">Cambridge University Press (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2204.04198">arXiv:2204.04198</a></p>
+            <p class="ex">In this book, we provide a comprehensive introduction to the most recent advances in the application of machine learning methods in quantum sciences. We cover the use of deep learning and kernel methods in supervised, unsupervised, and reinforcement learning algorithms for phase classification, representation of many-body quantum states, quantum feedback control, and quantum circuits optimization.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2411.00468">Quantum-centric computation of molecular excited states with extended sample-based quantum diagonalization</a></h4>
+            <p class="au"><strong>Stefano Barison</strong>, Javier Robledo Moreno, Mario Motta</p>
+            <p class="ve"><a href="https://doi.org/10.1088/2058-9565/adb781">Quantum Sci. Technol. 10, 025034 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2411.00468">arXiv:2411.00468</a></p>
+            <p class="ex">In this work, we extend the SQD algorithm to determine low-lying molecular excited states.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2508.02578">Quantum chemistry with provable convergence via randomized sample-based Krylov quantum diagonalization</a></h4>
+            <p class="au">Samuele Piccinelli, Alberto Baiardi, <strong>Stefano Barison</strong>, … (15 authors)</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2508.02578">arXiv:2508.02578</a></p>
+            <p class="ex">In this work, we introduce a method that combines SKQD with a qDRIFT randomized compilation of the Hamiltonian propagator. The resulting algorithm, termed SqDRIFT, enables quantum chemistry experiments on quantum processors, while preserving the convergence guarantees similar to the phase estimation algorithm.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2411.07144">Autoregressive neural quantum states of Fermi Hubbard models</a></h4>
+            <p class="au">Eduardo Ibarra-García-Padilla, Hannah Lange, Roger G Melko, Richard T Scalettar, <strong>Juan Carrasquilla</strong>, Annabelle Bohrdt, Ehsan Khatami</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.7.013122">Phys. Rev. Research 7, 013122 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2411.07144">arXiv:2411.07144</a></p>
+            <p class="ex">Here, we apply recurrent neural networks (RNNs) and autoregressive transformer neural networks to the Fermi-Hubbard and the (non-Hermitian) Hatano-Nelson-Hubbard models in one and two dimensions. We present a physically-motivated and easy-to-implement strategy for improving the optimization, namely, by ramping of the model parameters.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 26 more from 2025</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2406.15557">Observation of a non-Hermitian supersonic mode on a trapped-ion quantum computer</a></h4>
+            <p class="au">Yuxuan Zhang, <strong>Juan Carrasquilla</strong>, Yong Baek Kim</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41467-025-57930-3">Nat. Commun. 16, 3286 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2406.15557">arXiv:2406.15557</a></p>
+            <p class="ex">Using a variational quantum compilation scheme for fermionic systems, we reduce gate count, save qubits, and eliminate the need for postselection, a major challenge in simulating non-Hermitian dynamics via standard Trotterization. Experimentally, we observed a supersonic mode in the connected density-density correlation function on an n = 18 fermionic chain after a non-Hermitian, locally interacting quench, which would otherwise be forbidden by the Lieb-Robinson bound in a Hermitian system.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1088/2515-7639/adc29d">Artificial intelligence for advanced functional materials: exploring current and future directions</a></h4>
+            <p class="au">Cristiano Malica, Kostya S Novoselov, Amanda S Barnard, …, <strong>Juan Carrasquilla</strong>, … (27 authors)</p>
+            <p class="ve"><a href="https://doi.org/10.1088/2515-7639/adc29d">J. Phys. Mater. 8, 021001 (2025)</a></p>
+            <p class="ex">This perspective addresses the topic of harnessing the tools of artificial intelligence (AI) for boosting innovation in functional materials design and engineering as well as discovering new materials for targeted applications in energy storage, biomedicine, composites, nanoelectronics or quantum technologies.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2502.17144">Leveraging recurrence in neural network wavefunctions for large-scale simulations of Heisenberg antiferromagnets on the square lattice</a></h4>
+            <p class="au">M. Schuyler Moss, Roeland Wiersema, Mohamed Hibat-Allah, <strong>Juan Carrasquilla</strong>, Roger G. Melko</p>
+            <p class="ve"><a href="https://doi.org/10.1103/6ccd-wzhz">Phys. Rev. B 112, 134450 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2502.17144">arXiv:2502.17144</a></p>
+            <p class="ex">In this work, we employ recurrent neural networks (RNNs) as a variational ansätze, and leverage their recurrent nature to simulate the ground states of progressively larger systems through iterative retraining. Furthermore, we use these results to extract accurate estimates of the ground-state properties in the thermodynamic limit.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2405.20384">Recurrent neural network wave functions for Rydberg atom arrays on kagome lattice</a></h4>
+            <p class="au">Mohamed Hibat-Allah, Ejaaz Merali, Giacomo Torlai, Roger G Melko, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1038/s42005-025-02226-7">Commun. Phys. 8, 308 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2405.20384">arXiv:2405.20384</a></p>
+            <p class="ex">In this paper, we apply two-dimensional recurrent neural network (RNN) wave functions to study the ground states of Rydberg atom arrays on the kagome lattice. For Rydberg atom array Hamiltonians studied previously on the kagome lattice, our RNN ground states show no evidence of exotic spin liquid or emergent glassy behavior.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2406.09077">Spectroscopy of two-dimensional interacting lattice electrons using symmetry-aware neural backflow transformations</a></h4>
+            <p class="au">Imelda Romero, <strong>Jannes Nys</strong>, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s42005-025-01955-z">Commun. Phys. 8, 46 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2406.09077">arXiv:2406.09077</a></p>
+            <p class="ex">In this work, we introduce a framework for embedding lattice symmetries in fermionic wavefunctions and demonstrate its ability to target both ground states and low-lying excitations. Using group-equivariant neural backflow transformations, we study the t-V model on a square lattice away from half-filling.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2506.18765">Hardware-Efficient Quantum Phase Estimation via Local Control</a></h4>
+            <p class="au"><strong>Benjamin F. Schiffer</strong>, Dominik S. Wild, Nishad Maskara, Mikhail D. Lukin, J. Ignacio Cirac</p>
+            <p class="ve"><a href="https://doi.org/10.1103/zlp8-rz9n">PRX Quantum 6, 040348 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2506.18765">arXiv:2506.18765</a></p>
+            <p class="ex">In this work, we present an approach to quantum phase estimation that uses only locally controlled operations, resulting in a significantly reduced circuit depth.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2406.19872">Predicting topological entanglement entropy in a Rydberg analogue simulator</a></h4>
+            <p class="au">Linda Mauron, Zakari Denis, <strong>Jannes Nys</strong>, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41567-025-02944-3">Nat. Phys. 21, 1332–1337 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2406.19872">arXiv:2406.19872</a></p>
+            <p class="ex">This work proposes a variational approach based on a time-dependent correlated Ansatz, focusing on the dynamical preparation of a quantum-spin-liquid state on a Rydberg-atom simulator.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2401.05973">Geodesic algorithm for unitary gate design with time-independent Hamiltonians</a></h4>
+            <p class="au">Dylan Lewis, Roeland Wiersema, <strong>Juan Carrasquilla</strong>, Sougato Bose</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.111.052618">Phys. Rev. A 111, 052618 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2401.05973">arXiv:2401.05973</a></p>
+            <p class="ex">We show that our geodesic algorithm outperforms gradient descent methods for standard multi-qubit gates such as Toffoli and Fredkin. The geodesic algorithm is then used to find previously unavailable multi-qubit gates implementing high fidelity parity checks, which could be used in a wide array of quantum codes and increase the clock speed of fault-tolerant quantum computers.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2505.20406">Leveraging recurrence in neural network wavefunctions for large-scale simulations of Heisenberg antiferromagnets on the triangular lattice</a></h4>
+            <p class="au">M. Schuyler Moss, Roeland Wiersema, Mohamed Hibat-Allah, <strong>Juan Carrasquilla</strong>, Roger G. Melko</p>
+            <p class="ve"><a href="https://doi.org/10.1103/nh89-6jmf">Phys. Rev. B 112, 134449 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2505.20406">arXiv:2505.20406</a></p>
+            <p class="ex">In this paper, we use recurrent neural network (RNN) wavefunction ansätze to study the triangular-lattice antiferromagnetic Heisenberg model (TLAHM) for lattice sizes up to 30 × 30. We find that the accuracy of our simulations can be significantly improved by transforming the Hamiltonian with a judicious choice of basis rotation.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2507.01883">Circuit compression for 2D quantum dynamics</a></h4>
+            <p class="au"><strong>Matteo D'Anna</strong>, Yuxuan Zhang, Roeland Wiersema, Manuel S. Rudolph, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2507.01883">arXiv:2507.01883</a></p>
+            <p class="ex">Here we leverage Pauli propagation techniques to develop a strategy for compressing circuits that implement the dynamics of large two-dimensional (2D) quantum systems and beyond. As a concrete demonstration, we compress the dynamics of systems up to 30 × 30 qubits and achieve accuracies that surpass standard Trotterization methods by orders of magnitude at identical circuit depths.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2412.05332">Phase Diagram and Crystal Melting of Helium-4 in Two Dimensions</a></h4>
+            <p class="au">David Linteau, Gabriel Pescia, <strong>Jannes Nys</strong>, Giuseppe Carleo, Markus Holzmann</p>
+            <p class="ve"><a href="https://doi.org/10.1103/v1g7-m9k4">Phys. Rev. Lett. 134, 246001 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2412.05332">arXiv:2412.05332</a></p>
+            <p class="ex">We study the zero-temperature phase diagram of two-dimensional helium-4 using neural quantum states. Our variational description allows us to address liquid and solid phases using the same functional form as well as exploring possible melting scenarios, for instance via an intermediate hexatic phase.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2411.01079">Adiabatic state preparation for digital quantum simulations of QED in 1 + 1D</a></h4>
+            <p class="au"><strong>Matteo D'Anna</strong>, Marina Krstic Marinkovic, Joao C. Pinto Barros</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevd.111.094514">Phys. Rev. D 111, 094514 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2411.01079">arXiv:2411.01079</a></p>
+            <p class="ex">In this work, we address algorithms for adiabatic state preparation in digital quantum simulations of QED2. We further propose a new adiabatic Hamiltonian and verify its efficiency in targeting systems with a nonzero topological θ-term and in studying string breaking phenomena.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2507.10835">Functional Neural Wavefunction Optimization</a></h4>
+            <p class="au">Victor Armegioiu, <strong>Juan Carrasquilla</strong>, Siddhartha Mishra, Johannes Müller, <strong>Jannes Nys</strong>, Marius Zeinhofer, <strong>Hang Zhang</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2507.10835">arXiv:2507.10835</a></p>
+            <p class="ex">We propose a framework for the design and analysis of optimization algorithms in variational quantum Monte Carlo, drawing on geometric insights into the corresponding function space. This perspective unifies existing methods such as stochastic reconfiguration and Rayleigh-Gauss-Newton, provides connections to classic function-space algorithms, and motivates the derivation of novel algorithms with geometrically principled hyperparameter choices.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2302.03017">Quantum eigenstate preparation assisted by a coherent link</a></h4>
+            <p class="au"><strong>Benjamin F. Schiffer</strong>, Jordi Tura</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.111.012445">Phys. Rev. A 111, 012445 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2302.03017">arXiv:2302.03017</a></p>
+            <p class="ex">Here we consider the setting where Alice and Bob, in a distributed quantum computing architecture, want to prepare the same Hamiltonian eigenstate. We demonstrate that the circuit depth of the eigenstate preparation algorithm can be reduced when the devices can share limited entanglement.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2408.06571">Iterative quantum optimization of spin glass problems with rapidly oscillating transverse fields</a></h4>
+            <p class="au"><strong>Brandon Barton</strong>, Jacob Sagal, Sean Feeney, George Grattan, Pratik Patnaik, Vadim Oganesyan, Lincoln D Carr, Eliot Kapit</p>
+            <p class="ve"><a href="https://doi.org/10.1088/2058-9565/ae0f4d">Quantum Sci. Technol. 10, 045063 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2408.06571">arXiv:2408.06571</a></p>
+            <p class="ex">In this work, we introduce a new iterative quantum algorithm, called Iterative Symphonic Tunneling for Satisfiability problems (IST-SAT), which solves quantum spin glass optimization problems using high-frequency oscillating transverse fields. We benchmark IST-SAT on sets of hard MAX-3-XORSAT problem instances with exact state vector simulation, and report polynomial speedups over trotterized adiabatic quantum computation (TAQC) and the best known semi-greedy classical algorithm.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2507.08073">Partial suppression of magnetism in the square lattice SU(3) Hubbard model</a></h4>
+            <p class="au">Samuel Bird, Sebastian Huber, <strong>Jannes Nys</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/jfxt-9r1c">Phys. Rev. B 112, L161115 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2507.08073">arXiv:2507.08073</a></p>
+            <p class="ex">We report a substantially new ground-state phase diagram of the square lattice SU(3) Fermi-Hubbard model. Using a backflow ansatz, we identify strong signatures of a Mott transition and a subsequent magnetic transition, and the suppression of a previously predicted magnetic phase.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2410.16408">Neural network distillation of orbital dependent density functional theory</a></h4>
+            <p class="au"><strong>Matija Medvidović</strong>, Jaylyn C. Umana, Iman Ahmadabadi, Domenico Di Sante, Johannes Flick, Angel Rubio</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.7.023113">Phys. Rev. Research 7, 023113 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2410.16408">arXiv:2410.16408</a></p>
+            <p class="ex">In this paper, we formulate a general way of rewriting complex density functionals using deep neural networks in a way that allows for simplified computation of Kohn-Sham potentials as well as higher functional derivatives through automatic differentiation, enabling access to highly nonlinear response functions and forces. Functionals treated in this way are then called global density approximations and can be seamlessly integrated with existing DFT workflows.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2501.13097">Preparing low-variance states using a distributed quantum algorithm</a></h4>
+            <p class="au">Xiaoyu Liu, <strong>Benjamin F. Schiffer</strong>, Jordi Tura</p>
+            <p class="ve"><a href="https://doi.org/10.22331/q-2025-08-28-1838">Quantum 9, 1838 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2501.13097">arXiv:2501.13097</a></p>
+            <p class="ex">In this work, we present a distributed quantum algorithm inspired by iterative phase estimation to prepare low-variance states. Our method uses a single auxiliary qubit per quantum device, which controls its dynamics, and a postselection strategy for a joint quantum measurement on such auxiliary qubits.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2504.06283">Comment on: &quot;Dynamics of disordered quantum systems with two- and three-dimensional tensor networks&quot; arXiv:2503.05693</a></h4>
+            <p class="au">Andrew D. King, Alberto Nocera, Marek M. Rams, Jacek Dziarmaga, Jack Raymond, Nitin Kaushal, Anders W. Sandvik, Gonzalo Alvarez, <strong>Juan Carrasquilla</strong>, Marcel Franz, Mohammad H. Amin</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2504.06283">arXiv:2504.06283</a></p>
+            <p class="ex">Rather, these classical advances narrow the parameter space in which beyond-classical computation has been demonstrated. In the near future these classical methods can be combined with quantum simulations to help sharpen the boundary between classical and quantum simulability.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2412.05616">Local fermion-to-qudit mappings: A practical recipe for four-level systems</a></h4>
+            <p class="au">Rodolfo Carobene, <strong>Stefano Barison</strong>, Andrea Giachero, <strong>Jannes Nys</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/bcs4-hxl3">Phys. Rev. A 112, 032619 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2412.05616">arXiv:2412.05616</a></p>
+            <p class="ex">In this paper, we present a new set of local fermion-to-qudit mappings for simulating fermionic lattice systems. By leveraging the extended local Hilbert space of qudits, we show that these mappings enable more efficient quantum simulations in terms of two-qudit gates, reducing hardware requirements without increasing computational complexity.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2512.11418">Stabilizer-based quantum simulation of fermion dynamics with local qubit encodings</a></h4>
+            <p class="au">Anthony Gandon, Samuele Piccinelli, Max Rossmannek, Francesco Tacchino, Alberto Baiardi, <strong>Jannes Nys</strong>, Ivano Tavernelli</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2512.11418">arXiv:2512.11418</a></p>
+            <p class="ex">Local fermion-to-qubit encodings have opened a new path for practical fermionic simulations on digital quantum hardware where fermionic statistics are not enforced at the hardware level. For each categorized flow-set form, we propose a low-depth qubit quantum circuit that implements the time evolution unitary using the stabilizer formalism.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2512.04663">Fermionic neural Gibbs states</a></h4>
+            <p class="au"><strong>Jannes Nys</strong>, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2512.04663">arXiv:2512.04663</a></p>
+            <p class="ex">We introduce fermionic neural Gibbs states (fNGS), a variational framework for modeling finite-temperature properties of strongly interacting fermions. Applied to the doped Fermi-Hubbard model, a minimal lattice model capturing essential features of strong electronic correlations, fNGS accurately reproduces thermal energies over a broad range of temperatures, interaction strengths, even at large dopings, for system sizes beyond the reach of exact methods.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2510.24911">Classically Prepared, Quantumly Evolved: Hybrid Algorithm for Molecular Spectra</a></h4>
+            <p class="au">Alessandro Santini, <strong>Stefano Barison</strong>, Filippo Vicentini</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2510.24911">arXiv:2510.24911</a></p>
+            <p class="ex">We introduce a hybrid classical-quantum algorithm to compute dynamical correlation functions and excitation spectra in many-body quantum systems, with a focus on molecular systems. The method combines classical preparation of a perturbed ground state with short-time quantum evolution of product states sampled from it.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1609/aaai.v39i28.35174">Bridging the AI Gap: Evaluating the Impact of an AI Education Program for Caregivers on Parental Leave</a></h4>
+            <p class="au">Kristina L. Kupferschmidt, Flora Wan, <strong>Juan Carrasquilla Alvarez</strong>, Dora Gaviria Castaño, Graham W. Taylor, Sedef Akinli Kocak</p>
+            <p class="ve"><a href="https://doi.org/10.1609/aaai.v39i28.35174">Proc. AAAI Conf. Artif. Intell. 39, 29036–29043 (2025)</a></p>
+            <p class="ex">To address this, the Caregivers and Machine Learning (C&amp;ML) program developed and delivered an accessible AI education program to caregivers on parental leave. The C&amp;ML program's flexible structure and personalized support network were critical in enabling participants to fully engage in the program, leading to significant improvements in their knowledge of ML and increased confidence in applying these skills.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.3390/agriengineering7090303">Leveraging Transfer Learning for Determining Germination Percentages in Gray Mold Disease (Botrytis cinerea)</a></h4>
+            <p class="au">Luis M. Gómez-Meneses, Andrea Pérez, Angélica Sajona, Luis F. Patiño, Jorge Herrera-Ramírez, <strong>Juan Carrasquilla</strong>, Jairo C. Quijano</p>
+            <p class="ve"><a href="https://doi.org/10.3390/agriengineering7090303">AgriEngineering 7, 303 (2025)</a></p>
+            <p class="ex">This study proposes an approach based on deep learning, using one-stage detectors to automate the detection and counting of germinated and non-germinated conidia in microscopy images. The results show that these deep-learning models achieved counting accuracies that closely matched those obtained with conventional manual methods, yet they delivered results far more rapidly.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2404.04005">The statistical mechanics and machine learning of the α-Rényi ensemble</a></h4>
+            <p class="au"><strong>Andrew Jreissaty</strong>, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.7.013070">Phys. Rev. Research 7, 013070 (2025)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2404.04005">arXiv:2404.04005</a></p>
+            <p class="ex">We study the statistical physics of the classical Ising model in the so-called α-Rényi ensemble, a finite-temperature thermal state approximation that minimizes a modified free energy based on the α-Rényi entropy. We conclude by performing a variational minimization of the α-Rényi free energy using a recurrent neural network (RNN) ansatz where we find that the RNN performs well in two dimensions when compared to the Monte Carlo simulations.</p>
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2024<span class="cnt">23 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2302.04919">Variational benchmarks for quantum many-body problems</a></h4>
+            <p class="au">Dian Wu, Riccardo Rossi, Filippo Vicentini, …, <strong>Juan Carrasquilla</strong>, <strong>Jannes Nys</strong>, … (33 authors)</p>
+            <p class="ve"><a href="https://doi.org/10.1126/science.adg9774">Science 386, 296–301 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2302.04919">arXiv:2302.04919</a></p>
+            <p class="ex">In this work, we introduce a metric of variational accuracy, the V-score, obtained from the variational energy and its variance. We provide an extensive curated dataset of variational calculations of many-body quantum systems, identifying cases where state-of-the-art numerical approaches show limited accuracy, and future algorithms or computational platforms, such as quantum computing, could provide improved accuracy.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2305.07240">Message-passing neural quantum states for the homogeneous electron gas</a></h4>
+            <p class="au">Gabriel Pescia, <strong>Jannes Nys</strong>, Jane Kim, Alessandro Lovato, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.110.035108">Phys. Rev. B 110, 035108 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2305.07240">arXiv:2305.07240</a></p>
+            <p class="ex">We introduce a message-passing-neural-network-based wave function Ansatz to simulate extended, strongly interacting fermions in continuous space. Symmetry constraints, such as continuous translation symmetries, can be readily embedded in the model.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2402.11014">Neural-network quantum states for many-body physics</a></h4>
+            <p class="au"><strong>Matija Medvidović</strong>, Javier Robledo Moreno</p>
+            <p class="ve"><a href="https://doi.org/10.1140/epjp/s13360-024-05311-y">Eur. Phys. J. Plus 139, 631 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2402.11014">arXiv:2402.11014</a></p>
+            <p class="ex">In this review, we derive the central equations of different flavors variational Monte Carlo (VMC) approaches, including ground state search, time evolution and overlap optimization, and discuss data-driven tasks like quantum state tomography.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2305.08831">Neural-network quantum states for ultra-cold Fermi gases</a></h4>
+            <p class="au">Jane Kim, Gabriel Pescia, Bryce Fore, <strong>Jannes Nys</strong>, Giuseppe Carleo, Stefano Gandolfi, Morten Hjorth-Jensen, Alessandro Lovato</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s42005-024-01613-w">Commun. Phys. 7, 148 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2305.08831">arXiv:2305.08831</a></p>
+            <p class="ex">This work introduces a novel Pfaffian-Jastrow neural-network quantum state that includes backflow transformation based on message-passing architecture to efficiently encode pairing, and other quantum mechanical correlations. Our approach offers substantial improvements over comparable ansätze constructed within the Slater-Jastrow framework and outperforms state-of-the-art diffusion Monte Carlo methods, as indicated by our lower ground-state energies.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2303.15626">A framework for demonstrating practical quantum advantage: comparing quantum against classical generative models</a></h4>
+            <p class="au">Mohamed Hibat-Allah, Marta Mauri, <strong>Juan Carrasquilla</strong>, Alejandro Perdomo-Ortiz</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s42005-024-01552-6">Commun. Phys. 7, 68 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2303.15626">arXiv:2303.15626</a></p>
+            <p class="ex">In this study, we build over a proposed framework for evaluating the generalization performance of generative models, and we establish the first quantitative comparative race towards practical quantum advantage (PQA) between classical and quantum generative models, namely Quantum Circuit Born Machines (QCBMs), Transformers (TFs), Recurrent Neural Networks (RNNs), Variational Autoencoders (VAEs), and Wasserstein Generative Adversarial Networks (WGANs). Our results suggest that QCBMs are more efficient in the data-limited regime than the other state-of-the-art classical generative models.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 18 more from 2024</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2403.07447">Ab-initio variational wave functions for the time-dependent many-electron Schrödinger equation</a></h4>
+            <p class="au"><strong>Jannes Nys</strong>, Gabriel Pescia, Alessandro Sinibaldi, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41467-024-53672-w">Nat. Commun. 15, 9404 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2403.07447">arXiv:2403.07447</a></p>
+            <p class="ex">Our work introduces a variational approach for fermionic time-dependent wave functions, surpassing mean-field approximations by accurately capturing many-body correlations.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2303.12839">Variational quantum time evolution without the quantum geometric tensor</a></h4>
+            <p class="au">Julien Gacon, <strong>Jannes Nys</strong>, Riccardo Rossi, Stefan Woerner, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.6.013143">Phys. Rev. Research 6, 013143 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2303.12839">arXiv:2303.12839</a></p>
+            <p class="ex">In this work, we propose a solution to this scaling problem by leveraging a dual formulation that circumvents the explicit evaluation of the QGT. We demonstrate our algorithm for the time evolution of the Heisenberg Hamiltonian and show that it accurately reproduces the system dynamics at a fraction of the cost of standard variational quantum time evolution algorithms.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2303.11355">Here comes the SU(N): multivariate quantum gates and gradients</a></h4>
+            <p class="au">Roeland Wiersema, Dylan Lewis, David Wierichs, <strong>Juan Carrasquilla</strong>, Nathan Killoran</p>
+            <p class="ve"><a href="https://doi.org/10.22331/q-2024-03-07-1275">Quantum 8, 1275 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2303.11355">arXiv:2303.11355</a></p>
+            <p class="ex">Here, we propose a gate which fully parameterizes the special unitary group SU(N). This gate is generated by a sum of non-commuting operators, and we provide a method for calculating its gradient on quantum hardware.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2309.07063">Real-time quantum dynamics of thermal states with neural thermofields</a></h4>
+            <p class="au"><strong>Jannes Nys</strong>, Zakari Denis, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.109.235120">Phys. Rev. B 109, 235120 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2309.07063">arXiv:2309.07063</a></p>
+            <p class="ex">In this work, we propose a method to study the real-time dynamics of thermal states in two dimensions, based on thermofield dynamics, variational Monte Carlo, and neural-network quantum states.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2306.13131">Circumventing superexponential runtimes for hard instances of quantum adiabatic optimization</a></h4>
+            <p class="au"><strong>Benjamin F. Schiffer</strong>, Dominik S. Wild, Nishad Maskara, Madelyn Cain, Mikhail D. Lukin, Rhine Samajdar</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.6.013271">Phys. Rev. Research 6, 013271 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2306.13131">arXiv:2306.13131</a></p>
+            <p class="ex">Here, we consider the maximum independent set problem, which can be efficiently encoded in the Hamiltonian describing a Rydberg atom array. We present a general construction of instances of the problem for which the minimum gap decays superexponentially with system size, implying a superexponentially large time to solution via adiabatic evolution.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1038/s43588-023-00578-0">Language models for quantum simulation</a></h4>
+            <p class="au">Roger G. Melko, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1038/s43588-023-00578-0">Nat. Comput. Sci. 4, 11–18 (2024)</a></p>
+            
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2310.08578">Neural network approach to quasiparticle dispersions in doped antiferromagnets</a></h4>
+            <p class="au">Hannah Lange, Fabian Döschl, <strong>Juan Carrasquilla</strong>, Annabelle Bohrdt</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s42005-024-01678-7">Commun. Phys. 7, 187 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2310.08578">arXiv:2310.08578</a></p>
+            <p class="ex">Here, we investigate the ability of neural quantum states (NQS) to represent the bosonic and fermionic t-J model - the high interaction limit of the Fermi-Hubbard model - on different 1D and 2D lattices. Using autoregressive recurrent neural networks (RNNs) with 2D tensorized gated recurrent units, we study the ground state representations upon doping the half-filled system with holes.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2309.15127">GradDFT. A software library for machine learning enhanced density functional theory</a></h4>
+            <p class="au">Pablo A. M. Casares, Jack S. Baker, <strong>Matija Medvidovic</strong>, Roberto dos Reis, Juan Miguel Arrazola</p>
+            <p class="ve"><a href="https://doi.org/10.1063/5.0181037">J. Chem. Phys. 160, 062501 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2309.15127">arXiv:2309.15127</a></p>
+            <p class="ex">In this work, we present Grad DFT: a fully differentiable JAX-based DFT library, enabling quick prototyping and experimentation with machine learning-enhanced exchange-correlation energy functionals.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2404.15397">The quantum adiabatic algorithm suppresses the proliferation of errors</a></h4>
+            <p class="au"><strong>Benjamin F. Schiffer</strong>, Adrian Franco Rubio, Rahul Trivedi, J. Ignacio Cirac</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2404.15397">arXiv:2404.15397</a></p>
+            <p class="ex">Here, we analyze the proliferation of a single error event in the adiabatic algorithm. We give numerical evidence using tensor network methods that the intrinsic properties of adiabatic processes effectively constrain the amplification of errors during the evolution for geometrically local Hamiltonians.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2306.16572">Composite Qdrift-product formulas for quantum and classical simulations in real and imaginary time</a></h4>
+            <p class="au">Matthew Pocrnic, Matthew Hagan, <strong>Juan Carrasquilla</strong>, Dvira Segal, Nathan Wiebe</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.6.013224">Phys. Rev. Research 6, 013224 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2306.16572">arXiv:2306.16572</a></p>
+            <p class="ex">Here we show that this approach holds in imaginary time, making it a candidate classical algorithm for quantum Monte-Carlo calculations. We upper-bound the induced Schatten-1 → 1 norm on both imaginary-time QDrift and Composite channels.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2405.21019">Quantum quench dynamics as a shortcut to adiabaticity</a></h4>
+            <p class="au">Alexander Lukin, <strong>Benjamin F. Schiffer</strong>, Boris Braverman, Sergio H. Cantu, Florian Huber, Alexei Bylinskii, Jesse Amato-Grill, Nishad Maskara, Madelyn Cain, Dominik S. Wild, Rhine Samajdar, Mikhail D. Lukin</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2405.21019">arXiv:2405.21019</a></p>
+            <p class="ex">Our experiments show that this approach significantly outperforms the adiabatic algorithm, illustrating that such quantum quench algorithms can provide a shortcut to adiabaticity for large-scale many-body quantum systems.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2307.03229">Adaptive projected variational quantum dynamics</a></h4>
+            <p class="au">David Linteau, <strong>Stefano Barison</strong>, Netanel Lindner, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.6.023130">Phys. Rev. Research 6, 023130 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2307.03229">arXiv:2307.03229</a></p>
+            <p class="ex">We propose an adaptive quantum algorithm to prepare accurate variational time evolved wave functions. The method is based on the projected Variational Quantum Dynamics (pVQD) algorithm, that performs a global optimization with linear scaling in the number of variational parameters.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2403.15372">Machine learning-based compression of quantum many body physics: PCA and autoencoder representation of the vertex function</a></h4>
+            <p class="au">Jiawei Zang, <strong>Matija Medvidović</strong>, Dominik Kiese, Domenico Di Sante, Anirvan M. Sengupta, Andrew J. Millis</p>
+            <p class="ve"><a href="https://doi.org/10.1088/2632-2153/ad9f20">Mach. Learn.: Sci. Technol. 5, 045076 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2403.15372">arXiv:2403.15372</a></p>
+            <p class="ex">In this work, we take a simple and interpretable data-driven approach to the open question of compressing the two-particle vertex. We use PCA and an autoencoder neural network to derive compact, low-dimensional representations of underlying physics for the case of interacting fermions on a lattice.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2402.13030">Compressing the two-particle Green’s function using wavelets: Theory and application to the Hubbard atom</a></h4>
+            <p class="au">Emin Moghadas, Nikolaus Dräger, Alessandro Toschi, Jiawei Zang, <strong>Matija Medvidović</strong>, Dominik Kiese, Andrew J. Millis, Anirvan M. Sengupta, Sabine Andergassen, Domenico Di Sante</p>
+            <p class="ve"><a href="https://doi.org/10.1140/epjp/s13360-024-05403-9">Eur. Phys. J. Plus 139, 700 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2402.13030">arXiv:2402.13030</a></p>
+            <p class="ex">Precise algorithms capable of providing controlled solutions in the presence of strong interactions are transforming the landscape of quantum many-body physics. Particularly exciting breakthroughs are enabling the computation of non-zero temperature correlation functions.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2307.10358">Virtual mitigation of coherent non-adiabatic transitions by echo verification</a></h4>
+            <p class="au"><strong>Benjamin F. Schiffer</strong>, Dyon van Vreumingen, Jordi Tura, Stefano Polla</p>
+            <p class="ve"><a href="https://doi.org/10.22331/q-2024-05-14-1346">Quantum 8, 1346 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2307.10358">arXiv:2307.10358</a></p>
+            <p class="ex">We propose an adiabatic echo verification protocol which mitigates both coherent and incoherent errors, arising from non-adiabatic transitions and hardware noise, respectively.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2401.05500">Characterization of overparametrization in the simulation of realistic quantum systems</a></h4>
+            <p class="au">Matthew Duschenes, <strong>Juan Carrasquilla</strong>, Raymond Laflamme</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.109.062607">Phys. Rev. A 109, 062607 (2024)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2401.05500">arXiv:2401.05500</a></p>
+            <p class="ex">Here, we study the robustness of overparameterization phenomena in the presence of experimental constraints on the controls, such as bounding or sharing parameters across operators, as well as in the presence of noise inherent to experimental setups. We observe that overparameterization phenomena are resilient in these realistic settings at short times, however fidelities decay to zero past a critical simulation duration due to accumulation of either quantum or classical noise.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1051/0004-6361/202449780">Impact of the numerical conversion to optical depth on the transfer of polarized radiation</a></h4>
+            <p class="au"><strong>Matteo D'Anna</strong>, Gioele Janett, Luca Belluzzi</p>
+            <p class="ve"><a href="https://doi.org/10.1051/0004-6361/202449780">Astron. Astrophys. 689, A90 (2024)</a></p>
+            <p class="ex">This work is aimed at clearly assessing the performance of different optical depth conversion schemes with respect to the solution of the radiative transfer problem for polarized radiation, out of the local thermodynamic equilibrium. To fully exploit high-order formal solvers and obtain accurate synthetic emergent Stokes profiles, it is necessary to use high-order optical depth conversion schemes.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2405.08138">A logical qubit-design with geometrically tunable error-resistibility</a></h4>
+            <p class="au"><strong>Reja H. Wilke</strong>, Leonard W. Pingen, Thomas Köhler, Sebastian Paeckel</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2405.08138">arXiv:2405.08138</a></p>
+            <p class="ex">We propose a setup for a logical qubit built from superconducting qubits (SCQs) coupled to a microwave cavity-mode. Our design is based on a recently discovered geometric stabilizing mechanism in the Bose-Hubbard wheel (BHW), which manifests as energetically well-separated clusters of many-body eigenstates.</p>
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2023<span class="cnt">18 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2006.02424">Quantum process tomography with unsupervised learning and tensor networks</a></h4>
+            <p class="au">Giacomo Torlai, Christopher J. Wood, Atithi Acharya, Giuseppe Carleo, <strong>Juan Carrasquilla</strong>, Leandro Aolita</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41467-023-38332-9">Nat. Commun. 14, 2858 (2023)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2006.02424">arXiv:2006.02424</a></p>
+            <p class="ex">Here, we present a new technique for performing quantum process tomography that addresses these issues by combining a tensor network representation of the channel with a data-driven optimization inspired by unsupervised machine learning.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2207.14734">Fast quantum circuit cutting with randomized measurements</a></h4>
+            <p class="au">Angus Lowe, <strong>Matija Medvidović</strong>, Anthony Hayes, Lee J. O'Riordan, Thomas R. Bromley, Juan Miguel Arrazola, Nathan Killoran</p>
+            <p class="ve"><a href="https://doi.org/10.22331/q-2023-03-02-934">Quantum 7, 934 (2023)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2207.14734">arXiv:2207.14734</a></p>
+            <p class="ex">We propose a new method to extend the size of a quantum computation beyond the number of physical qubits available on a single device. This is accomplished by randomly inserting measure-and-prepare channels to express the output state of a large circuit as a separable state across distinct devices.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2303.11207">Investigating topological order using recurrent neural networks</a></h4>
+            <p class="au">Mohamed Hibat-Allah, Roger G. Melko, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.108.075152">Phys. Rev. B 108, 075152 (2023)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2303.11207">arXiv:2303.11207</a></p>
+            <p class="ex">Here, we employ 2D RNNs to investigate two prototypical quantum many-body Hamiltonians exhibiting topological order.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2212.11289">Variational Quantum Dynamics of Two-Dimensional Rotor Models</a></h4>
+            <p class="au"><strong>Matija Medvidović</strong>, Dries Sels</p>
+            <p class="ve"><a href="https://doi.org/10.1103/prxquantum.4.040302">PRX Quantum 4, 040302 (2023)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2212.11289">arXiv:2212.11289</a></p>
+            <p class="ex">We present a numerical method to simulate the dynamics of continuous-variable quantum many-body systems. Our approach is based on custom neural-network many-body quantum states.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2301.01853">Kagome qubit ice</a></h4>
+            <p class="au">Alejandro Lopez-Bezanilla, Jack Raymond, Kelly Boothby, <strong>Juan Carrasquilla</strong>, Cristiano Nisoli, Andrew D. King</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41467-023-36760-1">Nat. Commun. 14, 1105 (2023)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2301.01853">arXiv:2301.01853</a></p>
+            <p class="ex">Here we present a realization of kagome spin ice in the superconducting qubits of a quantum annealer, and use it to demonstrate a field-induced kinetic crossover between spin-liquid phases.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 13 more from 2023</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2111.08035">Measurement-induced entanglement phase transitions in variational quantum circuits</a></h4>
+            <p class="au">Roeland Wiersema, Cunlu Zhou, <strong>Juan Felipe Carrasquilla</strong>, Yong Baek Kim</p>
+            <p class="ve"><a href="https://doi.org/10.21468/scipostphys.14.6.147">SciPost Phys. 14, 147 (2023)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2111.08035">arXiv:2111.08035</a></p>
+            <p class="ex">Our work paves an avenue for greatly improving the trainability of quantum circuits by incorporating intermediate measurement protocols in currently available quantum hardware.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2307.07050">Wasserstein Quantum Monte Carlo: A Novel Approach for Solving the Quantum Many-Body Schrödinger Equation</a></h4>
+            <p class="au">Kirill Neklyudov, <strong>Jannes Nys</strong>, Luca Thiede, <strong>Juan Carrasquilla</strong>, Qiang Liu, Max Welling, Alireza Makhzani</p>
+            <p class="ve"><a href="https://doi.org/10.52202/075280-2770">Adv. Neural Inf. Process. Syst. 36, 63461–63482 (2023)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2307.07050">arXiv:2307.07050</a></p>
+            <p class="ex">In this paper, we first reformulate energy functional minimization in the space of Born distributions corresponding to particle-permutation (anti-)symmetric wave functions, rather than the space of wave functions. We then interpret QVMC as the Fisher-Rao gradient flow in this distributional space, followed by a projection step onto the variational manifold.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2208.07192">Quantum circuits for solving local fermion-to-qubit mappings</a></h4>
+            <p class="au"><strong>Jannes Nys</strong>, Giuseppe Carleo</p>
+            <p class="ve">Quantum 7, 930 (2023)<span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2208.07192">arXiv:2208.07192</a></p>
+            <p class="ex">In this work, we introduce quantum circuits that exactly satisfy these stringent constraints. We demonstrate how maintaining locality allows one to carry out a Trotterized time-evolution with constant circuit depth per time step.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2212.02516">Spin excitation continuum to topological magnon crossover and thermal Hall conductivity in Kitaev magnets</a></h4>
+            <p class="au">Emily Z. Zhang, <strong>Reja H. Wilke</strong>, Yong Baek Kim</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.107.184418">Phys. Rev. B 107, 184418 (2023)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2212.02516">arXiv:2212.02516</a></p>
+            <p class="ex">In this work, we provide insights into the finite temperature crossover behavior between the spin excitation continuum in a quantum spin liquid and topological magnons in the field-polarized state in three different theoretical models with large Kitaev interactions. These models allow for a field-induced phase transition from a spin liquid (or an intermediate field-induced spin liquid) to the field-polarized state in the quantum model.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1016/j.dib.2023.109134">Synthetic dataset of speckle images for fiber optic temperature sensor</a></h4>
+            <p class="au">Juan Arango, Victor Aristizabal, Francisco Vélez, <strong>Juan Carrasquilla</strong>, Jorge Gomez, Jairo Quijano, Jorge Herrera-Ramirez</p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.dib.2023.109134">Data in Brief 48, 109134 (2023)</a></p>
+            <p class="ex">We simulated a 1490 nm wavelength laser, an optical fiber with a core diameter of 50 µm and cladding diameter of 125 µm.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2301.08292">Quantum HyperNetworks: Training Binary Neural Networks in Quantum Superposition</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Mohamed Hibat-Allah, Estelle Inack, Alireza Makhzani, Kirill Neklyudov, Graham W. Taylor, Giacomo Torlai</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2301.08292">arXiv:2301.08292</a></p>
+            <p class="ex">Here we introduce quantum hypernetworks as a mechanism to train binary neural networks on quantum computers, which unify the search over parameters, hyperparameters, and architectures in a single optimization loop.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2312.06104">On the approximability of random-hypergraph MAX-3-XORSAT problems with quantum algorithms</a></h4>
+            <p class="au">Eliot Kapit, <strong>Brandon A. Barton</strong>, Sean Feeney, George Grattan, Pratik Patnaik, Jacob Sagal, Lincoln D. Carr, Vadim Oganesyan</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2312.06104">arXiv:2312.06104</a></p>
+            <p class="ex">We conclude that the mechanisms for quantum exact and approximation hardness are fundamentally distinct. We review known results from the literature, and identify mechanisms that make conventional quantum methods (such as Adiabatic Quantum Computing) weak approximation algorithms in the worst case.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2305.17707">Quantum-Classical Multiple Kernel Learning</a></h4>
+            <p class="au">Ara Ghukasyan, Jack S. Baker, Oktay Goktas, <strong>Juan Carrasquilla</strong>, Santosh Kumar Radha</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2305.17707">arXiv:2305.17707</a></p>
+            <p class="ex">We consider pairwise combinations of several classical-classical, quantum-quantum, and quantum-classical kernels in an empirical investigation of their classification performance with support-vector machines. We also introduce a novel approach, which we call QCC-net (quantum-classical-convex neural network), for optimizing the weights of base kernels together with any kernel parameters.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2309.08666">Variational Embeddings for Many Body Quantum Systems</a></h4>
+            <p class="au"><strong>Stefano Barison</strong>, Filippo Vicentini, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2309.08666">arXiv:2309.08666</a></p>
+            <p class="ex">We propose a variational scheme to represent composite quantum systems using multiple parameterized functions of varying accuracies on both classical and quantum hardware. The approach follows the variational principle over the entire system, and is naturally suited for scenarios where an accurate description is only needed in a smaller subspace.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1038/s42005-023-01303-z">Symmetry-protected Bose-Einstein condensation of interacting hardcore bosons</a></h4>
+            <p class="au"><strong>Reja H. Wilke</strong>, Thomas Köhler, Felix A. Palm, Sebastian Paeckel</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s42005-023-01303-z">Commun. Phys. 6, 182 (2023)</a></p>
+            <p class="ex">Here, we introduce a mechanism stabilizing a one-dimensional quantum many-body phase exploiting an emergent Z2 Z 2 -symmetry based on a simple geometrical modification, i.e. a site that couples to all lattice sites. We illustrate this mechanism by constructing the solution of the full quantum many-body problem of hardcore bosons on a wheel geometry, which are known to form Bose-Einstein condensates.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2311.17814">Exponential acceleration of macroscopic quantum tunneling in a Floquet Ising model</a></h4>
+            <p class="au">George Grattan, <strong>Brandon A. Barton</strong>, Sean Feeney, Gianni Mossi, Pratik Patnaik, Jacob C. Sagal, Lincoln D. Carr, Vadim Oganesyan, Eliot Kapit</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2311.17814">arXiv:2311.17814</a></p>
+            <p class="ex">In this work, we demonstrate exponential acceleration of MQT through Floquet engineering with the application of a uniform, high frequency transverse drive field. Using the ferromagnetic phase of the transverse field Ising model in one and two dimensions as a prototypical example, we identify three phenomenological regimes as a function of drive strength.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2304.05262">Sequence of penalties method to study excited states using VQE</a></h4>
+            <p class="au">Rodolfo Carobene, <strong>Stefano Barison</strong>, Andrea Giachero</p>
+            <p class="ve"><a href="https://doi.org/10.1088/2058-9565/acd1a9">Quantum Sci. Technol. 8, 035014 (2023)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2304.05262">arXiv:2304.05262</a></p>
+            <p class="ex">We propose an extension of the Variational Quantum Eigensolver (VQE) that leads to more accurate energy estimations and can be used to study excited states. The method is based on the introduction of a sequence of increasing penalties in the cost function.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1364/isa.2023.ith2e.3">Automatic Acquisition System of Fiber Optic Speckle Patterns with Temperature Variations</a></h4>
+            <p class="au">Juan Arango, Victor Aristizabal, <strong>Juan Carrasquilla</strong>, Jorge Gomez, Jairo Quijano, Francisco Vélez, Miguel Gomez, Jorge Herrera-Ramirez</p>
+            <p class="ve"><a href="https://doi.org/10.1364/isa.2023.ith2e.3">Optica Imaging Congress 2023, ITh2E.3 (2023)</a></p>
+            <p class="ex">In this work, an automated system based on Proportional-Integral-Derivative control was developed to acquire specklegrams with temperature variations with 0.45 °C resolution.</p>
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2022<span class="cnt">17 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2112.10526">NetKet 3: Machine Learning Toolbox for Many-Body Quantum Systems</a></h4>
+            <p class="au">Filippo Vicentini, Damian Hofmann, Attila Szabó, Dian Wu, Christopher Roth, Clemens Giuliani, Gabriel Pescia, <strong>Jannes Nys</strong>, Vladimir Vargas-Calderon, Nikita Astrakhantsev, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.21468/scipostphyscodeb.7">SciPost Phys. Codebases 7 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2112.10526">arXiv:2112.10526</a></p>
+            <p class="ex">We introduce version 3 of NetKet, the machine learning toolbox for many-body quantum physics. NetKet is built around neural-network quantum states and provides efficient algorithms for their evaluation and optimization.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2009.05580">Autoregressive Neural Network for Simulating Open Quantum Systems via a Probabilistic Formulation</a></h4>
+            <p class="au">Di Luo, Zhuo Chen, <strong>Juan Carrasquilla</strong>, Bryan K. Clark</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevlett.128.090501">Phys. Rev. Lett. 128, 090501 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2009.05580">arXiv:2009.05580</a></p>
+            <p class="ex">In this paper, we present an approach for tackling open quantum system dynamics. Using an exact probabilistic formulation of quantum physics based on positive operator-valued measure (POVM), we compactly represent quantum states with autoregressive transformer neural networks; such networks bring significant algorithmic flexibility due to efficient exact sampling and tractable density.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2105.08086">Neural Error Mitigation of Near-Term Quantum Simulations</a></h4>
+            <p class="au">Elizabeth R. Bennewitz, Florian Hopfmueller, Bohdan Kulchytskyy, <strong>Juan Carrasquilla</strong>, Pooya Ronagh</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s42256-022-00509-0">Nat. Mach. Intell. 4, 618–624 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2105.08086">arXiv:2105.08086</a></p>
+            <p class="ex">We introduce &quot;neural error mitigation,&quot; which uses neural networks to improve estimates of ground states and ground-state observables obtained using near-term quantum simulations.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2103.01226">Adiabatic Spectroscopy and a Variational Quantum Adiabatic Algorithm</a></h4>
+            <p class="au"><strong>Benjamin F. Schiffer</strong>, Jordi Tura, J. Ignacio Cirac</p>
+            <p class="ve"><a href="https://doi.org/10.1103/prxquantum.3.020347">PRX Quantum 3, 020347 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2103.01226">arXiv:2103.01226</a></p>
+            <p class="ex">We aim at combining the strengths of the adiabatic and the variational approaches for fast and high-fidelity ground state preparation while keeping the number of measurements as low as possible. Our algorithms build upon ancilla protocols which we present that allow to directly evaluate the ground state overlap.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2108.12441">Optimal control of quantum thermal machines using machine learning</a></h4>
+            <p class="au">Ilia Khait, <strong>Juan Carrasquilla</strong>, Dvira Segal</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.4.l012029">Phys. Rev. Research 4, L012029 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2108.12441">arXiv:2108.12441</a></p>
+            <p class="ex">Here, we show that differentiable programming (DP), a machine learning (ML) tool, can be employed to optimize finite-time thermodynamical processes in a quantum thermal machine. We consider the paradigmatic quantum Otto engine with a time-dependent harmonic oscillator as its working fluid, and build upon shortcut-to-adiabaticity (STA) protocols.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 12 more from 2022</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2207.14314">Supplementing Recurrent Neural Network Wave Functions with Symmetry and Annealing to Improve Accuracy</a></h4>
+            <p class="au">Mohamed Hibat-Allah, Roger G. Melko, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2207.14314">arXiv:2207.14314</a></p>
+            <p class="ex">Here, we build over the results of [Phys. Rev. Research 2, 023358 (2020)] and construct a more powerful RNN wave function ansatz in two dimensions. We use symmetry and annealing to obtain accurate estimates of ground state energies of the two-dimensional (2D) Heisenberg model, on the square lattice and on the triangular lattice.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2202.13268">Deep Learning the Functional Renormalization Group</a></h4>
+            <p class="au">Domenico Di Sante, <strong>Matija Medvidović</strong>, Alessandro Toschi, Giorgio Sangiovanni, Cesare Franchini, Anirvan M. Sengupta, Andrew J. Millis</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevlett.129.136402">Phys. Rev. Lett. 129, 136402 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2202.13268">arXiv:2202.13268</a></p>
+            <p class="ex">We perform a data-driven dimensionality reduction of the scale-dependent 4-point vertex function characterizing the functional Renormalization Group (fRG) flow for the widely studied two-dimensional t - t' Hubbard model on the square lattice.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevd.105.l091501">Deep learning exotic hadrons</a></h4>
+            <p class="au">L. Ng, Ł. Bibrzycki, <strong>J. Nys</strong>, C. Fernández-Ramírez, A. Pilloni, V. Mathieu, A. J. Rasmusson, A. P. Szczepaniak, Joint Physics Analysis Center</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevd.105.l091501">Phys. Rev. D 105, L091501 (2022)</a></p>
+            <p class="ex">We perform the first amplitude analysis of experimental data using deep neural networks to determine the nature of an exotic hadron. Specifically, we study the line shape of the Pc(4312) signal reported by the LHCb collaboration, and we find that its most likely interpretation is that of a virtual state.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2205.00733">Variational solutions to fermion-to-qubit mappings in two spatial dimensions</a></h4>
+            <p class="au"><strong>Jannes Nys</strong>, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.22331/q-2022-10-13-833">Quantum 6, 833 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2205.00733">arXiv:2205.00733</a></p>
+            <p class="ex">We present a variational Monte-Carlo framework to study fermionic systems through higher-dimensional (&gt;1D) Jordan-Wigner transformations. We provide exact solutions to the parity and Gauss-law constraints that are encountered in bosonization procedures.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2204.03454">Variational dynamics as a ground-state problem on a quantum computer</a></h4>
+            <p class="au"><strong>Stefano Barison</strong>, Filippo Vicentini, Ignacio Cirac, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.4.043161">Phys. Rev. Research 4, 043161 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2204.03454">arXiv:2204.03454</a></p>
+            <p class="ex">We propose a variational quantum algorithm to study the real time dynamics of quantum systems as a ground-state problem. The method is based on the original proposal of Feynman and Kitaev to encode time into a register of auxiliary qubits.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2011.08137">Quantum simulations of molecular systems with intrinsic atomic orbitals</a></h4>
+            <p class="au"><strong>Stefano Barison</strong>, Davide Emilio Galli, Mario Motta</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.106.022404">Phys. Rev. A 106, 022404 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2011.08137">arXiv:2011.08137</a></p>
+            <p class="ex">Here we explore the use of intrinsic atomic orbitals (IAOs) in quantum simulations of molecules, to improve the accuracy of energies and properties at the same computational cost required by a minimal basis. We investigate ground-state energies and one- and two-body density operators in the framework of the variational quantum eigensolver, employing and comparing different Ansätze.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1145/3536221.3556615">Unpretty Please: Ostensibly Polite Wakewords Discourage Politeness in both Robot-Directed and Human-Directed Communication</a></h4>
+            <p class="au">Ruchen Wen, <strong>Brandon Barton</strong>, Sebastian Fauré, Tom Williams</p>
+            <p class="ve"><a href="https://doi.org/10.1145/3536221.3556615">Proc. ICMI 2022, 181–190 (2022)</a></p>
+            <p class="ex">In this paper, we argue that these “please-centering” wakewords are likely to backfire and actually discourage polite interactions due to the particular types of lexical and syntactic priming induced by those wakewords. We then present the results of a human-subject experiment (n=90) that validates those claims.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2211.13765">Implicit differentiation of variational quantum algorithms</a></h4>
+            <p class="au">Shahnawaz Ahmed, Nathan Killoran, <strong>Juan Felipe Carrasquilla Álvarez</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2211.13765">arXiv:2211.13765</a></p>
+            <p class="ex">Here, we show how to leverage implicit differentiation for gradient computation through variational quantum algorithms and explore applications in condensed matter physics, quantum machine learning, and quantum information.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2203.04984">Circuit connectivity boosts by quantum-classical-quantum interfaces</a></h4>
+            <p class="au">Roeland Wiersema, Leonardo Guerini, <strong>Juan Felipe Carrasquilla</strong>, Leandro Aolita</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.4.043221">Phys. Rev. Research 4, 043221 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2203.04984">arXiv:2203.04984</a></p>
+            <p class="ex">We propose a hybrid classical-quantum algorithm to simulate such circuits without swap-gate ladders.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2205.02761">Quantum computers as an amplifier for existential risk</a></h4>
+            <p class="au"><strong>Benjamin F. Schiffer</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2205.02761">arXiv:2205.02761</a></p>
+            <p class="ex">In this work we discuss the potential consequences on existential risk for humanity.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2108.10298">Network control by a constrained external agent as a continuous optimization problem</a></h4>
+            <p class="au"><strong>Jannes Nys</strong>, Milan van den Heuvel, Koen Schoors, Bruno Merlevede</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41598-022-06144-4">Sci. Rep. 12, 2304 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2108.10298">arXiv:2108.10298</a></p>
+            <p class="ex">We integrate optimisation tools from deep-learning with network science into a framework that is able to optimize such interventions in real-world networks. We demonstrate the framework in the context of corporate control, where it allows to characterize the vulnerability of strategically important corporate networks to sensitive takeovers, an important contemporaneous policy challenge.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2107.07321">Quantum noise can enhance algorithmic cooling</a></h4>
+            <p class="au"><strong>Zahra Farahmand</strong>, Reyhaneh Aghaei Saem, Sadegh Raeisi</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.105.022418">Phys. Rev. A 105, 022418 (2022)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2107.07321">arXiv:2107.07321</a></p>
+            <p class="ex">Here we analyze Heat-Bath Algorithmic Cooling techniques under realistic noise models.</p>
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2021<span class="cnt">15 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2101.04579">An efficient quantum algorithm for the time evolution of parameterized circuits</a></h4>
+            <p class="au"><strong>Stefano Barison</strong>, Filippo Vicentini, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.22331/q-2021-07-28-512">Quantum 5, 512 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2101.04579">arXiv:2101.04579</a></p>
+            <p class="ex">We introduce a novel hybrid algorithm to simulate the real-time evolution of quantum systems using parameterized quantum circuits. The method, named &quot;projected - Variational Quantum Dynamics&quot; (p-VQD) realizes an iterative, global projection of the exact time evolution onto the parameterized manifold.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2101.10154">Variational neural annealing</a></h4>
+            <p class="au">Mohamed Hibat-Allah, Estelle M. Inack, Roeland Wiersema, Roger G. Melko, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1038/s42256-021-00401-3">Nat. Mach. Intell. 3, 952–961 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2101.10154">arXiv:2101.10154</a></p>
+            <p class="ex">Here we show that by generalizing the target distribution with a parameterized model, an analogous annealing framework based on the variational principle can be used to search for groundstate solutions.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2006.12469">Attention-based quantum tomography</a></h4>
+            <p class="au">Peter Cha, Paul Ginsparg, Felix Wu, <strong>Juan Carrasquilla</strong>, Peter L. McMahon, Eun-Ah Kim</p>
+            <p class="ve"><a href="https://doi.org/10.1088/2632-2153/ac362b">Mach. Learn.: Sci. Technol. 3, 01LT01 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2006.12469">arXiv:2006.12469</a></p>
+            <p class="ex">Here we propose the &quot;Attention-based Quantum Tomography&quot; (AQT), a quantum state reconstruction using an attention mechanism-based generative network that learns the mixed state density matrix of a noisy quantum state.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2101.11099">How To Use Neural Networks To Investigate Quantum Many-Body Physics</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Giacomo Torlai</p>
+            <p class="ve"><a href="https://doi.org/10.1103/prxquantum.2.040201">PRX Quantum 2, 040201 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2101.11099">arXiv:2101.11099</a></p>
+            <p class="ex">We present supervised machine learning with convolutional neural networks to learn a phase transition, unsupervised learning with restricted Boltzmann machines to perform quantum tomography, and variational Monte Carlo with recurrent neural-networks for approximating the ground state of a many-body Hamiltonian.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2009.01760">Classical variational simulation of the Quantum Approximate Optimization Algorithm</a></h4>
+            <p class="au"><strong>Matija Medvidovic</strong>, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41534-021-00440-z">npj Quantum Inf. 7, 101 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2009.01760">arXiv:2009.01760</a></p>
+            <p class="ex">We introduce a method to simulate layered quantum circuits consisting of parametrized gates, an architecture behind many variational quantum algorithms suitable for near-term quantum computers.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 10 more from 2021</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1912.11052">Probabilistic simulation of quantum circuits using a deep-learning architecture</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Di Luo, Felipe Pérez, Ashley Milsted, Bryan K. Clark, Maksims Volkovs, Leandro Aolita</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.104.032610">Phys. Rev. A 104, 032610 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1912.11052">arXiv:1912.11052</a></p>
+            <p class="ex">Here we present an exact formulation of quantum dynamics via factorized generalized measurements which maps quantum states to probability distributions with the advantage that local unitary dynamics and quantum channels map to local quasi-stochastic matrices. This representation provides a general framework for using state-of-the-art probabilistic models in machine learning for the simulation of quantum many-body dynamics.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2010.09429">Neural Additive Vector Autoregression Models for Causal Discovery in Time Series</a></h4>
+            <p class="au">Bart Bussmann, <strong>Jannes Nys</strong>, Steven Latré</p>
+            <p class="ve"><a href="https://doi.org/10.1007/978-3-030-88942-5_35">Lecture Notes in Computer Science, 446–460 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2010.09429">arXiv:2010.09429</a></p>
+            <p class="ex">We propose Neural Additive Vector Autoregression (NAVAR) models, a neural approach to causal structure learning that can discover nonlinear relationships. We train deep neural networks that extract the (additive) Granger causal influences from the time evolution in multi-variate time series.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2010.14514">U(1)-symmetric recurrent neural networks for quantum state reconstruction</a></h4>
+            <p class="au">Stewart Morawetz, Isaac J. S. De Vlugt, <strong>Juan Carrasquilla</strong>, Roger G. Melko</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.104.012401">Phys. Rev. A 104, 012401 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2010.14514">arXiv:2010.14514</a></p>
+            <p class="ex">In this paper, we employ a recurrent neural network (RNN) to reconstruct the ground state of the spin-1/2 XY model, a prototypical Hamiltonian explored in trapped ion simulators. We explore its performance after enforcing a U(1) symmetry, which was recently shown by Hibat-Allah et al. [Phys. Rev. Research 2, 023358 (2020)] to preserve the autoregressive nature of the RNN.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2008.09128">Protocol Discovery for the Quantum Control of Majoranas by Differentiable Programming and Natural Evolution Strategies</a></h4>
+            <p class="au">Luuk Coopmans, Di Luo, Graham Kells, Bryan K. Clark, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/prxquantum.2.020332">PRX Quantum 2, 020332 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2008.09128">arXiv:2008.09128</a></p>
+            <p class="ex">Here we apply Differentiable Programming (DP) and Natural Evolution Strategies (NES) to the optimal transport of Majorana zero modes in superconducting nanowires, a key element to the success of Majorana-based topological quantum computation.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2104.14869">Many-body quantum states with exact conservation of non-Abelian and lattice symmetries through variational Monte Carlo</a></h4>
+            <p class="au">Tom Vieijra, <strong>Jannes Nys</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.104.045123">Phys. Rev. B 104, 045123 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2104.14869">arXiv:2104.14869</a></p>
+            <p class="ex">We present an ansatz where global non-abelian symmetries are inherently embedded in its structure. We extend the model to incorporate lattice symmetries as well.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2108.07008">Noise robustness of persistent homology on greyscale images, across filtrations and signatures</a></h4>
+            <p class="au">Renata Turkeš, <strong>Jannes Nys</strong>, Tim Verdonck, Steven Latré</p>
+            <p class="ve"><a href="https://doi.org/10.1371/journal.pone.0257215">PLoS ONE 16, e0257215 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2108.07008">arXiv:2108.07008</a></p>
+            <p class="ex">Topological data analysis is a recent and fast growing field that approaches the analysis of datasets using techniques from (algebraic) topology. Its main tool, persistent homology (PH), has seen a notable increase in applications in the last decade.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1088/1742-6596/2139/1/012001">Deep learning classification and regression models for temperature values on a simulated fibre specklegram sensor</a></h4>
+            <p class="au">J D Arango, V H Aristizabal, <strong>J F Carrasquilla</strong>, J A Gomez, J C Quijano, F J Velez, J Herrera-Ramirez</p>
+            <p class="ve"><a href="https://doi.org/10.1088/1742-6596/2139/1/012001">J. Phys.: Conf. Ser. 2139, 012001 (2021)</a></p>
+            <p class="ex">We believe that these results show that the strategies implemented can improve the metrological capabilities of this type of sensor.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2003.02647">Watch and learn—a generalized approach for transferrable learning in deep neural networks via physical principles</a></h4>
+            <p class="au">Kyle Sprague, <strong>Juan Carrasquilla</strong>, Steve Whitelam, Isaac Tamblyn</p>
+            <p class="ve"><a href="https://doi.org/10.1088/2632-2153/abc81b">Mach. Learn.: Sci. Technol. 2, 02LT02 (2021)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2003.02647">arXiv:2003.02647</a></p>
+            <p class="ex">Here we demonstrate an unsupervised learning approach augmented with basic physical principles that achieves fully transferrable learning for problems in statistical physics across different physical regimes. By coupling a sequence model based on a recurrent neural network to an extensive deep neural network, we are able to learn the equilibrium probability distributions and inter-particle interaction models of classical statistical mechanical systems.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2112.11618">Quasiprobabilistic state-overlap estimator for NISQ devices</a></h4>
+            <p class="au">Leonardo Guerini, Roeland Wiersema, <strong>Juan Felipe Carrasquilla</strong>, Leandro Aolita</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2112.11618">arXiv:2112.11618</a></p>
+            <p class="ex">Here, we demonstrate a practical approach for measuring the overlap between quantum states based on a factorable quasiprobabilistic representation of the states, and compare it with methods based on randomised measurements.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2105.04164">Communication coordination in network controllability</a></h4>
+            <p class="au">Milan van den Heuvel, <strong>Jannes Nys</strong></p>
+            <p class="ve"><a href="https://arxiv.org/abs/2105.04164">arXiv:2105.04164</a></p>
+            <p class="ex">In this paper, we show that node controllability contains a single message assumption, allowing no heterogeneity in communication to neighbouring nodes in a network.</p>
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2020<span class="cnt">9 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2002.02973">Recurrent neural network wave functions</a></h4>
+            <p class="au">Mohamed Hibat-Allah, Martin Ganahl, Lauren E. Hayward, Roger G. Melko, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.2.023358">Phys. Rev. Research 2, 023358 (2020)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2002.02973">arXiv:2002.02973</a></p>
+            <p class="ex">In this paper, we demonstrate the ability of RNNs to represent several many-body wave functions, optimizing the variational parameters using a stochastic approach.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2003.11040">Machine learning for quantum matter</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1080/23746149.2020.1797528">Adv. Phys.: X 5, 1797528 (2020)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2003.11040">arXiv:2003.11040</a></p>
+            <p class="ex">Here we provide a short review on the recent development and adaptation of machine learning ideas for the purpose advancing research in quantum matter, including ideas ranging from algorithms that recognize conventional and topological states of matter in synthetic an experimental data, to representations of quantum states in terms of neural networks and their applications to the simulation and control of quantum systems.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2008.02941">Exploring Entanglement and Optimization within the Hamiltonian Variational Ansatz</a></h4>
+            <p class="au">Roeland Wiersema, Cunlu Zhou, Yvette de Sereville, <strong>Juan Felipe Carrasquilla</strong>, Yong Baek Kim, Henry Yuen</p>
+            <p class="ve"><a href="https://doi.org/10.1103/prxquantum.1.020319">PRX Quantum 1, 020319 (2020)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2008.02941">arXiv:2008.02941</a></p>
+            <p class="ex">In this paper, we focus on a special family of quantum circuits called the Hamiltonian Variational Ansatz (HVA), which takes inspiration from the quantum approximation optimization algorithm and adiabatic quantum computation.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1905.06034">Restricted Boltzmann Machines for Quantum States with Non-Abelian or Anyonic Symmetries</a></h4>
+            <p class="au">Tom Vieijra, Corneel Casert, <strong>Jannes Nys</strong>, Wesley De Neve, Jutho Haegeman, Jan Ryckebusch, Frank Verstraete</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevlett.124.097201">Phys. Rev. Lett. 124, 097201 (2020)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1905.06034">arXiv:1905.06034</a></p>
+            <p class="ex">We demonstrate that this problem can be overcome by sampling in the basis of irreducible representations instead of spins, for which the corresponding ansatz respects the nonabelian symmetries of the system.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2002.12310">Visualizing strange metallic correlations in the two-dimensional Fermi-Hubbard model with artificial intelligence</a></h4>
+            <p class="au">Ehsan Khatami, Elmer Guardado-Sanchez, Benjamin M. Spar, <strong>Juan Felipe Carrasquilla</strong>, Waseem S. Bakr, Richard T. Scalettar</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.102.033326">Phys. Rev. A 102, 033326 (2020)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/2002.12310">arXiv:2002.12310</a></p>
+            <p class="ex">Here, we show that artificial intelligence (AI) can provide an unbiased alternative to this paradigm for phases with subtle, or even unknown, patterns.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 4 more from 2020</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1906.04654">Wave-function positivization via automatic differentiation</a></h4>
+            <p class="au">Giacomo Torlai, <strong>Juan Carrasquilla</strong>, Matthew T. Fishman, Roger G. Melko, Matthew P. A. Fisher</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevresearch.2.032060">Phys. Rev. Research 2, 032060 (2020)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1906.04654">arXiv:1906.04654</a></p>
+            <p class="ex">We introduce a procedure to systematically search for a local unitary transformation that maps a wavefunction with a non-trivial sign structure into a positive-real form. The transformation is parametrized as a quantum circuit compiled into a set of one and two qubit gates.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1186/s13229-020-00396-5">Combined frequency-tagging EEG and eye-tracking measures provide no support for the “excess mouth/diminished eye attention” hypothesis in autism</a></h4>
+            <p class="au">Sofie Vettori, Stephanie Van der Donck, <strong>Jannes Nys</strong>, Pieter Moors, Tim Van Wesemael, Jean Steyaert, Bruno Rossion, Milena Dzhelyova, Bart Boets</p>
+            <p class="ve"><a href="https://doi.org/10.1186/s13229-020-00396-5">Mol. Autism 11, 94 (2020)</a></p>
+            <p class="ex">We used frequency-tagging EEG in combination with eye tracking, while participants watched fast flickering faces for 1-min stimulation sequences.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/2012.01442">Generative models for sampling of lattice field theories</a></h4>
+            <p class="au"><strong>Matija Medvidovic</strong>, <strong>Juan Carrasquilla</strong>, Lauren E. Hayward, Bohdan Kulchytskyy</p>
+            <p class="ve"><a href="https://arxiv.org/abs/2012.01442">arXiv:2012.01442</a></p>
+            <p class="ex">We explore a self-learning Markov chain Monte Carlo method based on the Adversarial Non-linear Independent Components Estimation Monte Carlo, which utilizes generative models and artificial neural networks. We apply this method to the scalar φ4 lattice field theory in the weak-coupling regime and, in doing so, greatly increase the system sizes explored to date with this self-learning technique.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1145/3395035.3425179">Using Markov Models and Classification to Understand Face Exploration Dynamics in Boys with Autism</a></h4>
+            <p class="au">Sofie Vettori, <strong>Jannes Nys</strong>, Bart Boets</p>
+            <p class="ve"><a href="https://doi.org/10.1145/3395035.3425179">ICMI 2020 Companion, 507 (2020)</a></p>
+            <p class="ex">We adopted this method combining Markov Models and classification analyses to understand face exploration dynamics in boys with ASD and typically developing school-aged boys (N = 42).</p>
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2019<span class="cnt">10 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1810.10584">Reconstructing quantum states with generative models</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Giacomo Torlai, Roger G. Melko, Leandro Aolita</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s42256-019-0028-1">Nat. Mach. Intell. 1, 155–161 (2019)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1810.10584">arXiv:1810.10584</a></p>
+            <p class="ex">We present an experimentally friendly method for density matrix reconstruction based on deep neural-network generative models.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1038/s41567-019-0545-1">Restricted Boltzmann machines in quantum physics</a></h4>
+            <p class="au">Roger G. Melko, Giuseppe Carleo, <strong>Juan Carrasquilla</strong>, J. Ignacio Cirac</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41567-019-0545-1">Nat. Phys. 15, 887–892 (2019)</a></p>
+            
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevlett.122.042002">Determination of the Pole Position of the Lightest Hybrid Meson Candidate</a></h4>
+            <p class="au">A. Rodas, A. Pilloni, M. Albaladejo, C. Fernández-Ramírez, A. Jackura, V. Mathieu, M. Mikhasenko, <strong>J. Nys</strong>, V. Pauk, B. Ketzer, A. P. Szczepaniak, Joint Physics Analysis Center</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevlett.122.042002">Phys. Rev. Lett. 122, 042002 (2019)</a></p>
+            <p class="ex">We fit the extracted intensities and phases with a coupled-channel amplitude that enforces the unitarity and analyticity of the S matrix.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1906.00463">Neural Gutzwiller-projected variational wave functions</a></h4>
+            <p class="au">Francesco Ferrari, Federico Becca, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.100.125131">Phys. Rev. B 100, 125131 (2019)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1906.00463">arXiv:1906.00463</a></p>
+            <p class="ex">In this work, we investigate the aforementioned fermionic wave functions supplemented with neural networks, specifically with the so-called restricted Boltzmann machine (RBM), to boost their accuracy and obtain reliable approximations to the ground state of generic spin models.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1140/epjc/s10052-019-6566-1">Phenomenology of relativistic 3 → 3 reaction amplitudes within the isobar approximation</a></h4>
+            <p class="au">Joint Physics Analysis Center, A. Jackura, C. Fernández-Ramírez, V. Mathieu, M. Mikhasenko, <strong>J. Nys</strong>, A. Pilloni, K. Saldaña, N. Sherrill, A. P. Szczepaniak</p>
+            <p class="ve"><a href="https://doi.org/10.1140/epjc/s10052-019-6566-1">Eur. Phys. J. C 79, 56 (2019)</a></p>
+            <p class="ex">We consider the isobar approximation, where the connected part of the 3→ 3 amplitude is first expressed as a sum over initial and final pairs, and then expanded into a truncated partial wave series. The resulting unitarity equation is automatically fulfilled by the B-matrix solution, which is an integral equation for the partial wave amplitudes, analogous to the K-matrix parameterization used to describe 2→ 2 amplitudes.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 5 more from 2019</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physreve.99.023304">Interpretable machine learning for inferring the phase boundaries in a nonequilibrium system</a></h4>
+            <p class="au">C. Casert, T. Vieijra, <strong>J. Nys</strong>, J. Ryckebusch</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreve.99.023304">Phys. Rev. E 99, 023304 (2019)</a></p>
+            <p class="ex">We investigate the generalizing and interpretability properties of learning algorithms.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1808.09859">The isospin and neutron-to-proton excess dependence of short-range correlations</a></h4>
+            <p class="au">Jan Ryckebusch, Wim Cosyn, Sam Stevens, Corneel Casert, <strong>Jannes Nys</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.physletb.2019.03.016">Phys. Lett. B 792, 21–28 (2019)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1808.09859">arXiv:1808.09859</a></p>
+            <p class="ex">We use the low-order correlation operator approximation (LCA) to compute the SRC contribution to the single-nucleon momentum distributions for 14 different nuclei from A=4 to A=208.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevd.99.034003">Regge phenomenology of the N* and Δ* poles</a></h4>
+            <p class="au">J. A. Silva-Castro, C. Fernández-Ramírez, M. Albaladejo, I. V. Danilkin, A. Jackura, V. Mathieu, <strong>J. Nys</strong>, A. Pilloni, A. P. Szczepaniak, G. Fox, Joint Physics Analysis Center</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevd.99.034003">Phys. Rev. D 99, 034003 (2019)</a></p>
+            <p class="ex">We employ the available pole extractions from partial wave analysis of meson scattering and photoproduction data. We assess the importance of the imaginary part of the poles (widths) to obtain a consistent determination of the parameters of the Regge trajectory.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1109/access.2019.2902316">Effective Geometry Monte Carlo: A Fast and Reliable Simulation Framework for Molecular Communication</a></h4>
+            <p class="au">Fatih Dinc, <strong>Matija Medvidovic</strong>, Leander Thiele</p>
+            <p class="ve"><a href="https://doi.org/10.1109/access.2019.2902316">IEEE Access 7, 28635–28650 (2019)</a></p>
+            <p class="ex">In this paper, we address systematic biases and random errors in the angular information stemming from finite step sizes encountered in traditional simulation frameworks. We show that the effective geometry Monte Carlo (EG-MC) simulation algorithm, which modifies the geometry of the receiver, is a fast and reliable simulation method to overcome these systematic biases.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.22323/1.341.0031">Modeling neutrino-nucleus interactions in the few-GeV region</a></h4>
+            <p class="au">Kajetan Niewczas, Natalie Jachowicz, Alexis Nikolakopoulos, <strong>Jannes Nys</strong>, Raul Gonzalez-Jimenez, Vishvas Pandey, Nils Van Dessel</p>
+            <p class="ve"><a href="https://doi.org/10.22323/1.341.0031">PoS(NuFACT2018) 031 (2019)</a></p>
+            <p class="ex">We describe the low energy response with collective nuclear excitations and the quasielastic peak using a Hartree-Fock-CRPA (continuum random phase approximation) model that takes into account nuclear long-range correlations as well as hadronic final--state interactions.</p>
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2018<span class="cnt">13 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1703.05334">Neural-network quantum state tomography</a></h4>
+            <p class="au">Giacomo Torlai, Guglielmo Mazzola, <strong>Juan Carrasquilla</strong>, Matthias Troyer, Roger Melko, Giuseppe Carleo</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41567-018-0048-5">Nat. Phys. 14, 447–450 (2018)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1703.05334">arXiv:1703.05334</a></p>
+            <p class="ex">Here we show that machine learning techniques can be efficiently used for QST of highly-entangled states, in both one and two dimensions.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1803.02047">Observation of topological phenomena in a programmable lattice of 1,800 qubits</a></h4>
+            <p class="au">Andrew D. King, <strong>Juan Carrasquilla</strong>, Isil Ozfidan, … (23 authors)</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41586-018-0410-x">Nature 560, 456–460 (2018)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1803.02047">arXiv:1803.02047</a></p>
+            <p class="ex">Here we demonstrate a large-scale quantum simulation of this phenomenon in a network of 1,800 in situ programmable superconducting flux qubits arranged in a fully-frustrated square-octagonal lattice.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevd.98.096021">Pole position of the a1(1260) from τ-decay</a></h4>
+            <p class="au">M. Mikhasenko, A. Pilloni, A. Jackura, M. Albaladejo, C. Fernández-Ramírez, V. Mathieu, <strong>J. Nys</strong>, A. Rodas, B. Ketzer, A. P. Szczepaniak, Joint Physics Analysis Center Collaboration</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevd.98.096021">Phys. Rev. D 98, 096021 (2018)</a></p>
+            <p class="ex">We then perform the analytic continuation of the amplitude to the complex energy plane.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevd.97.094003">Vector meson photoproduction with a linearly polarized beam</a></h4>
+            <p class="au">V. Mathieu, <strong>J. Nys</strong>, C. Fernández-Ramírez, A. Jackura, A. Pilloni, N. Sherrill, A. P. Szczepaniak, G. Fox, Joint Physics Analysis Center</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevd.97.094003">Phys. Rev. D 97, 094003 (2018)</a></p>
+            <p class="ex">We propose a model based on Regge theory to describe photoproduction of light vector mesons.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1016/j.physletb.2018.01.017">New analysis of ηπ tensor resonances measured at the COMPASS experiment</a></h4>
+            <p class="au">A. Jackura, C. Fernández-Ramírez, M. Mikhasenko, …, <strong>J. Nys</strong>, … (237 authors)</p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.physletb.2018.01.017">Phys. Lett. B 779, 464–472 (2018)</a></p>
+            <p class="ex">We present a new amplitude analysis of the ηπ D -wave in the reaction π − p → η π − p measured by COMPASS. Employing an analytical model based on the principles of the relativistic S -matrix, we find two resonances that can be identified with the a 2 (1320) and the excited a 2 ′ (1700), and perform a comprehensive analysis of their pole positions.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 8 more from 2018</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1140/epjc/s10052-018-6045-0">Khuri–Treiman equations for ππ scattering</a></h4>
+            <p class="au">Joint Physics Analysis Center, M. Albaladejo, N. Sherrill, C. Fernández-Ramírez, A. Jackura, V. Mathieu, M. Mikhasenko, <strong>J. Nys</strong>, A. Pilloni, A. P. Szczepaniak</p>
+            <p class="ve"><a href="https://doi.org/10.1140/epjc/s10052-018-6045-0">Eur. Phys. J. C 78, 574 (2018)</a></p>
+            <p class="ex">We cast this formalism into dispersive equations to study π π scattering, and compare their expressions and numerical output to the Roy and GKPY equations. We prove that the Khuri–Treiman equations and Roy equations coincide when both are truncated to include only S- and P-waves.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevd.98.034020">Global analysis of charge exchange meson production at high energies</a></h4>
+            <p class="au"><strong>J. Nys</strong>, A. N. Hiller Blin, V. Mathieu, C. Fernández-Ramírez, A. Jackura, A. Pilloni, J. Ryckebusch, A. P. Szczepaniak, G. Fox, Joint Physics Analysis Center</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevd.98.034020">Phys. Rev. D 98, 034020 (2018)</a></p>
+            <p class="ex">We test this separation by determining the kinematic regimes that are dominated by factorizable contributions, indicating the most favorable regions to perform this kind of experiments.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1016/j.physletb.2018.01.075">Features of πΔ photoproduction at high energies</a></h4>
+            <p class="au"><strong>J. Nys</strong>, V. Mathieu, C. Fernández-Ramírez, A. Jackura, M. Mikhasenko, A. Pilloni, N. Sherrill, J. Ryckebusch, A.P. Szczepaniak, G. Fox</p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.physletb.2018.01.075">Phys. Lett. B 779, 77–81 (2018)</a></p>
+            <p class="ex">We develop a model for π Δ photoproduction at high energies (5 ≤ E lab ≤ 16 GeV) that incorporates both the absorbed pion and natural-parity cut contributions. We fit the available observables, providing a good description of the energy and angular dependencies of the experimental data.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1140/epjc/s10052-018-5670-y">What is the right formalism to search for resonances?</a></h4>
+            <p class="au">Joint Physics Analysis Center, M. Mikhasenko, A. Pilloni, <strong>J. Nys</strong>, M. Albaladejo, C. Fernández-Ramírez, A. Jackura, V. Mathieu, N. Sherrill, T. Skwarnicki, A. P. Szczepaniak</p>
+            <p class="ve"><a href="https://doi.org/10.1140/epjc/s10052-018-5670-y">Eur. Phys. J. C 78, 229 (2018)</a></p>
+            <p class="ex">We discuss the differences between several partial wave analysis formalisms used in the literature to build the amplitudes. We match the helicity amplitudes to the covariant tensor basis.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1140/epjc/s10052-018-6177-2">What is the right formalism to search for resonances? II. The pentaquark chain</a></h4>
+            <p class="au">A. Pilloni, <strong>J. Nys</strong>, M. Mikhasenko, M. Albaladejo, C. Fernández-Ramírez, A. Jackura, V. Mathieu, N. Sherrill, T. Skwarnicki, A. P. Szczepaniak</p>
+            <p class="ve"><a href="https://doi.org/10.1140/epjc/s10052-018-6177-2">Eur. Phys. J. C 78, 727 (2018)</a></p>
+            <p class="ex">We discuss the differences between several partial-wave analysis formalisms used in the construction of three-body decay amplitudes involving fermions. Specifically, we consider the decay Λ b → ψ p K-, where the hidden charm pentaquark signal has been reported.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevd.98.014041">Structure of pion photoproduction amplitudes</a></h4>
+            <p class="au">V. Mathieu, <strong>J. Nys</strong>, C. Fernández-Ramírez, A. N. Hiller Blin, A. Jackura, A. Pilloni, A. P. Szczepaniak, G. Fox, Joint Physics Analysis Center</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevd.98.014041">Phys. Rev. D 98, 014041 (2018)</a></p>
+            <p class="ex">We derive and apply the finite energy sum rules to pion photoproduction. We evaluate the low-energy part of the sum rules using several state-of-the-art models.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1209/0295-5075/122/41001">Analyticity constraints for hadron amplitudes: Going high to heal low-energy issues</a></h4>
+            <p class="au">V. Mathieu, <strong>J. Nys</strong>, A. Pilloni, C. Fernández-Ramírez, A. Jackura, M. Mikhasenko, V. Pauk, A. P. Szczepaniak, G. Fox</p>
+            <p class="ve"><a href="https://doi.org/10.1209/0295-5075/122/41001">EPL 122, 41001 (2018)</a></p>
+            <p class="ex">Analyticity constitutes a rigid constraint on hadron scattering amplitudes. This property is used to relate models in different energy regimes.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.22323/1.295.0072">Modeling neutrino-nucleus interaction at intermediate energies</a></h4>
+            <p class="au">Raul Gonzalez-Jimenez, Natalie Jachowicz, Alexis Nikolakopoulos, <strong>Jannes Nys</strong>, Kajetan Niewczas, Vishvas Pandey, Tom Van Cuyck, Nils Van Dessel</p>
+            <p class="ve"><a href="https://doi.org/10.22323/1.295.0072">PoS(NuFact2017) 072 (2018)</a></p>
+            <p class="ex">We present the current status of the research activities of the Ghent group on neutrino-nucleus interactions. These consist in the modeling of some of the relevant neutrino-nucleus reaction channels at intermediate energies: low-energy nuclear excitations, quasielastic scattering, two-nucleon knockout processes and single-pion production.</p>
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2017<span class="cnt">10 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1605.01735">Machine learning phases of matter</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Roger G. Melko</p>
+            <p class="ve"><a href="https://doi.org/10.1038/nphys4035">Nat. Phys. 13, 431–434 (2017)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1605.01735">arXiv:1605.01735</a></p>
+            <p class="ex">We show that this classification occurs within the neural network without knowledge of the Hamiltonian or even the general locality of interactions. These results demonstrate the power of machine learning as a basic research tool in the field of condensed matter and statistical physics.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1609.02552">Machine Learning Phases of Strongly Correlated Fermions</a></h4>
+            <p class="au">Kelvin Ch'ng, <strong>Juan Carrasquilla</strong>, Roger G. Melko, Ehsan Khatami</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevx.7.031038">Phys. Rev. X 7, 031038 (2017)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1609.02552">arXiv:1609.02552</a></p>
+            <p class="ex">We employ neural-network machine learning techniques to distinguish finite-temperature phases of the strongly correlated fermions on cubic lattices. We show that a three dimensional convolutional network trained on auxiliary field configurations produced by quantum Monte Carlo simulations of the Hubbard model can correctly predict the magnetic phase diagram of the model at the average density of one (half filling).</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1608.07848">Machine learning quantum phases of matter beyond the fermion sign problem</a></h4>
+            <p class="au">Peter Broecker, <strong>Juan Carrasquilla</strong>, Roger G. Melko, Simon Trebst</p>
+            <p class="ve"><a href="https://doi.org/10.1038/s41598-017-09098-0">Sci. Rep. 7, 8823 (2017)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1608.07848">arXiv:1608.07848</a></p>
+            <p class="ex">Here we demonstrate that convolutional neural networks (CNN) can be optimized for quantum many-fermion systems such that they correctly identify and locate quantum phase transitions in such systems. Using auxiliary-field quantum Monte Carlo (QMC) simulations to sample the many-fermion system, we show that the Green's function (but not the auxiliary field) holds sufficient information to allow for the distinction of different fermionic phases via a CNN.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1016/j.physletb.2017.06.030">Amplitude analysis and the nature of the Z(3900)</a></h4>
+            <p class="au">A. Pilloni, C. Fernández-Ramírez, A. Jackura, V. Mathieu, M. Mikhasenko, <strong>J. Nys</strong>, A.P. Szczepaniak</p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.physletb.2017.06.030">Phys. Lett. B 772, 200–209 (2017)</a></p>
+            <p class="ex">We show how a thorough amplitude analysis of the data can help constraining models of these states.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevc.95.042201">Measurement of the beam asymmetry Σ for π0 and η photoproduction on the proton at Eγ = 9 GeV</a></h4>
+            <p class="au">H. Al Ghoul, E. G. Anassontzis, A. Austregesilo, …, <strong>J. Nys</strong>, … (126 authors)</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevc.95.042201">Phys. Rev. C 95, 042201 (2017)</a></p>
+            <p class="ex">The results are compared with theoretical predictions based on t-channel, quasiparticle exchange and constrain the axial-vector component of the neutral meson production mechanism in these models.</p>
+          </article>
+          <details class="more"><summary><span class="m">Show 5 more from 2017</span><span class="l">Show fewer</span></summary>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevd.95.034014">Finite-energy sum rules in eta photoproduction off a nucleon</a></h4>
+            <p class="au"><strong>J. Nys</strong>, V. Mathieu, C. Fernández-Ramírez, A. N. Hiller Blin, A. Jackura, M. Mikhasenko, A. Pilloni, A. P. Szczepaniak, G. Fox, J. Ryckebusch, Joint Physics Analysis Center</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevd.95.034014">Phys. Rev. D 95, 034014 (2017)</a></p>
+            <p class="ex">We illustrate how analyticity allows one to map the t dependence of the unknown Regge residue functions. We provide predictions for the energy dependence of the beam asymmetry at high energies.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physrevd.95.113007">Electroweak single-pion production off the nucleon: From threshold to high invariant masses</a></h4>
+            <p class="au">R. González-Jiménez, N. Jachowicz, K. Niewczas, <strong>J. Nys</strong>, V. Pandey, T. Van Cuyck, N. Van Dessel</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevd.95.113007">Phys. Rev. D 95, 113007 (2017)</a></p>
+            <p class="ex">Our goal is to develop a model for electroweak SPP off the nucleon, which is applicable to the entire energy range of interest for present and future accelerator-based neutrino-oscillation experiments.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1704.03478">Tripartite entangled plaquette state in a cluster magnet</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Gang Chen, Roger G. Melko</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.96.054405">Phys. Rev. B 96, 054405 (2017)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1704.03478">arXiv:1704.03478</a></p>
+            <p class="ex">We study the phase diagram of the model in detail, in particular the transitions to the tripartite entangled plaquette state, which are consistent with conventional order-disorder transitions.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1016/j.physletb.2017.09.081">On the η and η′ photoproduction beam asymmetry at high energies</a></h4>
+            <p class="au">V. Mathieu, <strong>J. Nys</strong>, C. Fernández-Ramírez, A. Jackura, M. Mikhasenko, A. Pilloni, A.P. Szczepaniak, G. Fox</p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.physletb.2017.09.081">Phys. Lett. B 774, 362–367 (2017)</a></p>
+            
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1103/physics.10.56">Neural Networks Identify Topological Phases</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/physics.10.56">Physics 10, 56 (2017)</a></p>
+            
+          </article>
+          </details>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2016<span class="cnt">3 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1510.00979">Spinon Walk in Quantum Spin Ice</a></h4>
+            <p class="au">Yuan Wan, <strong>Juan Carrasquilla</strong>, Roger G. Melko</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevlett.116.167202">Phys. Rev. Lett. 116, 167202 (2016)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1510.00979">arXiv:1510.00979</a></p>
+            <p class="ex">We study a minimal model for the dynamics of spinons in quantum spin ice. The model captures the essential strong coupling between the spinon and the disordered background spins.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1016/j.physletb.2016.05.069">Model discrimination in pseudoscalar-meson photoproduction</a></h4>
+            <p class="au"><strong>J. Nys</strong>, J. Ryckebusch, D.G. Ireland, D.I. Glazier</p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.physletb.2016.05.069">Phys. Lett. B 759, 260–265 (2016)</a></p>
+            <p class="ex">We introduce a geometrical measure to quantify the distance between models for pseudoscalar-meson photoproduction in amplitude space.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.7566/jpscp.10.032013">Hunting the Resonances in p(γ,K+)Λ: (Over) Complete Measurements and Partial-Wave Analyses</a></h4>
+            <p class="au"><strong>Jannes Nys</strong>, Jan Ryckebusch</p>
+            <p class="ve"><a href="https://doi.org/10.7566/jpscp.10.032013">JPS Conf. Proc. 10, 032013 (2016)</a></p>
+            <p class="ex">We apply both analysis techniques to the background-dominated p(γ,K+)Λ reaction. We introduce a variable that quantifies the maximum resolution that can be obtained in amplitude space after measuring a large amount of polarization observables.</p>
+          </article>
+        </div>
+      </div>
+      <details class="older"><summary><span class="m">Show papers before 2016 (28 papers, 2003&ndash;2015)</span><span class="l">Hide papers before 2016</span></summary>
+      <div class="year">
+        <h3 class="yn">2015<span class="cnt">5 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1410.0687">Spectral tensor networks for many-body localization</a></h4>
+            <p class="au">A. Chandran, <strong>J. Carrasquilla</strong>, I. H. Kim, D. A. Abanin, G. Vidal</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.92.024201">Phys. Rev. B 92, 024201 (2015)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1410.0687">arXiv:1410.0687</a></p>
+            <p class="ex">In this article, we explore a tensor network description of the eigenspectra of such systems.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1409.2882">Quantum distillation and confinement of vacancies in a doublon sea</a></h4>
+            <p class="au">Lin Xia, Laura A. Zundel, <strong>Juan Carrasquilla</strong>, Aaron Reinhard, Josh M. Wilson, Marcos Rigol, David S. Weiss</p>
+            <p class="ve"><a href="https://doi.org/10.1038/nphys3244">Nat. Phys. 11, 316–320 (2015)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1409.2882">arXiv:1409.2882</a></p>
+            <p class="ex">Here, we observe the expansion of a bundle of ultracold 1D Bose gases in a flat-bottomed optical lattice potential. By combining in situ measurements with photoassociation, we follow the spatial dynamics of singly, doubly, and triply occupied lattice sites.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1407.0037">A two-dimensional spin liquid in quantum kagome ice</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Zhihao Hao, Roger G. Melko</p>
+            <p class="ve"><a href="https://doi.org/10.1038/ncomms8421">Nat. Commun. 6, 7421 (2015)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1407.0037">arXiv:1407.0037</a></p>
+            <p class="ex">Here, we study a theoretical model for a broad class of frustrated magnetic rare-earth pyrochlore materials called &quot;quantum spin ices&quot;.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1412.5624">Gap scaling at Berezinskii-Kosterlitz-Thouless quantum critical points in one-dimensional Hubbard and Heisenberg models</a></h4>
+            <p class="au">M. Dalmonte, <strong>J. Carrasquilla</strong>, L. Taddia, E. Ercolessi, M. Rigol</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.91.165136">Phys. Rev. B 91, 165136 (2015)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1412.5624">arXiv:1412.5624</a></p>
+            <p class="ex">We discuss how to locate critical points in the Berezinskii-Kosterlitz-Thouless (BKT) universality class by means of gap-scaling analyses.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1502.01259">Amplitude extraction in pseudoscalar-meson photoproduction: towards a situation of complete information</a></h4>
+            <p class="au"><strong>Jannes Nys</strong>, Tom Vrancx, Jan Ryckebusch</p>
+            <p class="ve"><a href="https://doi.org/10.1088/0954-3899/42/3/034016">J. Phys. G: Nucl. Part. Phys. 42, 034016 (2015)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1502.01259">arXiv:1502.01259</a></p>
+            <p class="ex">A complete set for pseudoscalar-meson photoproduction is a minimum set of observables from which one can determine the underlying reaction amplitudes unambiguously. The complete sets considered in this work involve single- and double-polarization observables.</p>
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2014<span class="cnt">3 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1312.4558">Spiral antiferromagnets beyond the spin-wave approximation: Frustrated X Y and Heisenberg models on the honeycomb lattice</a></h4>
+            <p class="au">Andrea Di Ciolo, <strong>Juan Carrasquilla</strong>, Federico Becca, Marcos Rigol, Victor Galitski</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.89.094413">Phys. Rev. B 89, 094413 (2014)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1312.4558">arXiv:1312.4558</a></p>
+            <p class="ex">We examine the stability of classical states with a generic incommensurate spiral order against quantum fluctuations. Specifically, we focus on the frustrated spin-1/2 XY and Heisenberg models on the honeycomb lattice with nearest-neighbor J1 and next-nearest-neighbor J2 antiferromagnetic couplings.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1404.4156">K + Λ electroproduction above the resonance region</a></h4>
+            <p class="au">Tom Vrancx, Jan Ryckebusch, <strong>Jannes Nys</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevc.89.065202">Phys. Rev. C 89, 065202 (2014)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1404.4156">arXiv:1404.4156</a></p>
+            <p class="ex">Background: In π+n and π-p electroproduction, conventional models cannot satisfactory explain the data above the resonance region, in particular the transverse cross section. Although no high-energy L-T-separated cross-section data is available to date, a similar scenario can be inferred for K+Λ electroproduction.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1401.1938">Complete sets of observables in pseudoscalar-meson photo-production</a></h4>
+            <p class="au">Tom Vrancx, Jan Ryckebusch, <strong>Jannes Nys</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1051/epjconf/20147304011">EPJ Web of Conferences 73, 04011 (2014)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1401.1938">arXiv:1401.1938</a></p>
+            <p class="ex">Pseudoscalar-meson photoproduction is characterized by four complex reaction amplitudes. A complete set is a minimum theoretical set of observables that allow to determine these amplitudes unambiguously.</p>
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2013<span class="cnt">3 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1212.2219">Scaling of the gap, fidelity susceptibility, and Bloch oscillations across the superfluid-to-Mott-insulator transition in the one-dimensional Bose-Hubbard model</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Salvatore R. Manmana, Marcos Rigol</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.87.043606">Phys. Rev. A 87, 043606 (2013)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1212.2219">arXiv:1212.2219</a></p>
+            <p class="ex">We investigate the interaction-induced superfluid-to-Mott insulator transition in the one-dimensional Bose-Hubbard model (BHM) for fillings n=1, n=2, and n=3 by studying the single-particle gap, the fidelity susceptibility, and the amplitude of Bloch oscillations via density-matrix renormalization-group methods. We apply a generic scaling procedure for the gap, which allows us to determine the critical points with very high accuracy.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1307.2267">Nature of the phases in the frustrated X Y model on the honeycomb lattice</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Andrea Di Ciolo, Federico Becca, Victor Galitski, Marcos Rigol</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.88.241109">Phys. Rev. B 88, 241109 (2013)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1307.2267">arXiv:1307.2267</a></p>
+            <p class="ex">We study the phase diagram of the frustrated XY model on the honeycomb lattice by using accurate correlated wave functions and variational Monte Carlo simulations. Our results suggest that a spin-liquid state is energetically favorable in the region of intermediate frustration, intervening between two magnetically ordered phases.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1307.0821">Self-trapping in the two-dimensional Bose-Hubbard model</a></h4>
+            <p class="au"><strong>Andrew Jreissaty</strong>, <strong>Juan Carrasquilla</strong>, Marcos Rigol</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.88.031606">Phys. Rev. A 88, 031606 (2013)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1307.0821">arXiv:1307.0821</a></p>
+            <p class="ex">We study the expansion of harmonically trapped bosons in a two-dimensional lattice after suddenly turning off the confining potential. We show that, in the presence of multiple occupancies per lattice site and strong interactions, the system exhibits a clear dynamical separation into slowly and rapidly expanding clouds.</p>
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2012<span class="cnt">1 paper</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1205.6484">Superfluid to normal phase transition in strongly correlated bosons in two and three dimensions</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Marcos Rigol</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.86.043629">Phys. Rev. A 86, 043629 (2012)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1205.6484">arXiv:1205.6484</a></p>
+            <p class="ex">We then discuss how these phase diagrams can be measured in experiments with trapped ultracold gases, where the systems are inhomogeneous.</p>
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2011<span class="cnt">3 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1108.2272">Phase diagram of the half-filled one-dimensional t-V-V' model</a></h4>
+            <p class="au">Tapan Mishra, <strong>Juan Carrasquilla</strong>, Marcos Rigol</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.84.115135">Phys. Rev. B 84, 115135 (2011)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1108.2272">arXiv:1108.2272</a></p>
+            <p class="ex">We study the phase diagram of spinless fermions with nearest and next-nearest-neighbor interactions in one dimension utilizing the (finite-size) density-matrix renormalization group (DMRG) method. The competition between nearest and next-nearest-neighbor interactions and nearest-neighbor hopping generates four phases in this model: two charge-density-wave insulators, a Luttinger liquid phase, and a bond-order phase.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1108.1192">Expansion of Bose-Hubbard Mott insulators in optical lattices</a></h4>
+            <p class="au">Mark Jreissaty, <strong>Juan Carrasquilla</strong>, F. Alexander Wolf, Marcos Rigol</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.84.043610">Phys. Rev. A 84, 043610 (2011)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1108.1192">arXiv:1108.1192</a></p>
+            <p class="ex">We study the expansion of bosonic Mott insulators in the presence of an optical lattice after switching off a confining potential. We use the Gutzwiller mean-field approximation and consider two different setups.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1102.3339">Bose-glass, superfluid, and rung-Mott phases of hard-core bosons in disordered two-leg ladders</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Federico Becca, Michele Fabrizio</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.83.245101">Phys. Rev. B 83, 245101 (2011)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1102.3339">arXiv:1102.3339</a></p>
+            <p class="ex">We find that the phase diagram as a function of the boson density, disorder strength, and t′/t is far from being trivial. This contrasts the case of spin-less fermions where standard localization arguments apply and an Anderson-localized phase pervades the whole phase diagram.</p>
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2010<span class="cnt">2 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1003.1235">Characterization of the Bose-glass phase in low-dimensional lattices</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Federico Becca, Andrea Trombettoni, Michele Fabrizio</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physrevb.81.195129">Phys. Rev. B 81, 195129 (2010)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1003.1235">arXiv:1003.1235</a></p>
+            <p class="ex">We study by numerical simulation a disordered Bose-Hubbard model in low-dimensional lattices. We show that a proper characterization of the phase diagram on finite disordered clusters requires the knowledge of probability distributions of physical quantities rather than their averages.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://arxiv.org/abs/1005.4519">Extracting the Mott gap from energy measurements in trapped atomic gases</a></h4>
+            <p class="au"><strong>Juan Carrasquilla</strong>, Federico Becca</p>
+            <p class="ve"><a href="https://doi.org/10.1103/physreva.82.053609">Phys. Rev. A 82, 053609 (2010)</a><span class="sep" aria-hidden="true">/</span><a href="https://arxiv.org/abs/1005.4519">arXiv:1005.4519</a></p>
+            <p class="ex">Indeed, the curve of the release-energy as a function of the total number of particles shows kinks that are directly related to the existence of excitation gaps.</p>
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2009<span class="cnt">1 paper</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1364/josaa.26.002459">Definition and invariance properties of the complex degree of spatial coherence</a></h4>
+            <p class="au">Román Castañeda, <strong>Juan Carrasquilla</strong>, Jorge Garcia-Sucerquia</p>
+            <p class="ve"><a href="https://doi.org/10.1364/josaa.26.002459">J. Opt. Soc. Am. A 26, 2459 (2009)</a></p>
+            <p class="ex">Within the framework of the phase-space representation of random electromagnetic fields provided by electromagnetic spatial coherence wavelets, and by using the Fresnel-Arago laws for interference and polarization as an analysis tool, the meaning of the spatial coherence-polarization tensor and its invariance under transformations is studied.</p>
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2008<span class="cnt">3 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1364/ao.47.000e76">Spatial coherence wavelets and phase-space representation of diffraction</a></h4>
+            <p class="au">Román Castañeda, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1364/ao.47.000e76">Appl. Opt. 47, E76 (2008)</a></p>
+            <p class="ex">The phase-space representation of the Fresnel-Fraunhofer diffraction of optical fields in any state of spatial coherence is based on the marginal power spectrum carried by the spatial coherence wavelets. Its structure is analyzed in terms of the classes of source pairs and the spot of the field, which is treated as the hologram of the map of classes.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1364/ao.47.000e27">Phase-space representation and polarization domains of random electromagnetic fields</a></h4>
+            <p class="au">Roman Castaneda, Rafael Betancur, Jorge Herrera, <strong>Juan Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1364/ao.47.000e27">Appl. Opt. 47, E27 (2008)</a></p>
+            <p class="ex">The phase-space representation of stationary random electromagnetic fields is developed by using electromagnetic spatial coherence wavelets. The propagation of the field's power and states of spatial coherence and polarization results from correlations between the components of the field vectors at pairs of points in space.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1016/j.ijleo.2006.07.007">Retrieving the complex degree of spatial coherence of electron beams</a></h4>
+            <p class="au"><strong>J. Carrasquilla-Alvarez</strong>, R. Castaneda, J. Garcia-Sucerquia, M.A. Schofield, M. Beleggia, Y. Zhu, G. Matteucci</p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.ijleo.2006.07.007">Optik 119, 127–133 (2008)</a></p>
+            
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2007<span class="cnt">1 paper</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1016/j.optcom.2006.12.028">Radiometric analysis of diffraction of quasi-homogenous optical fields</a></h4>
+            <p class="au">Roman Castaneda, <strong>Juan Carrasquilla</strong>, Jorge Herrera</p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.optcom.2006.12.028">Opt. Commun. 273, 8–20 (2007)</a></p>
+            
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2006<span class="cnt">1 paper</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1364/josaa.23.002519">Young's experiment with electromagnetic spatial coherence wavelets</a></h4>
+            <p class="au">Roman Castaneda, <strong>Juan Carrasquilla</strong>, Jorge Garcia-Sucerquia</p>
+            <p class="ve"><a href="https://doi.org/10.1364/josaa.23.002519">J. Opt. Soc. Am. A 23, 2519 (2006)</a></p>
+            <p class="ex">We discuss Young's experiment with electromagnetic random fields at arbitrary states of coherence and polarization within the framework of the electric spatial coherence wavelets. The use of this approach for the electromagnetic spatial coherence theory allows us to envisage the existence of polarization domains inside the observation plane.</p>
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2005<span class="cnt">2 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1016/j.optcom.2004.12.030">Quality descriptors of optical beams based on centred reduced moments III: spot moments-based method for laser characterization</a></h4>
+            <p class="au">Roman Castañeda, Jorge García-Sucerquia, <strong>Juan F. Carrasquilla</strong></p>
+            <p class="ve"><a href="https://doi.org/10.1016/j.optcom.2004.12.030">Opt. Commun. 248, 509–519 (2005)</a></p>
+            
+          </article>
+          <article class="paper">
+            <h4><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slkzvvQAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=slkzvvQAAAAJ:ULOm3_A8WrAC">Diffraction from the perspective of the spatial coherence wavelets</a></h4>
+            <p class="au">R Castaneda, <strong>J Carrasquilla-Alvarez</strong>, J Garcia-Sucerquia</p>
+            <p class="ve">ICTP preprint, Trieste (2005)</p>
+            
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2004<span class="cnt">2 papers</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://doi.org/10.1364/ao.43.006095">Wavemeter based on moiré effect</a></h4>
+            <p class="au">Jorge Garcia-Sucerquia, <strong>Juan Carrasquilla</strong>, Diego Hincapié</p>
+            <p class="ve"><a href="https://doi.org/10.1364/ao.43.006095">Appl. Opt. 43, 6095 (2004)</a></p>
+            <p class="ex">A moiré-effect-based procedure used to measure the wavelength of coherent sources is shown. Two plane waves, individually coherent but mutually incoherent and located at the entrance pupil of a Michelson interferometer with slightly tilted mirrors, generate a moiré pattern at the output plane.</p>
+          </article>
+          <article class="paper">
+            <h4><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slkzvvQAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=slkzvvQAAAAJ:IjCSPb-OGe4C">Medición Interferométrica de Películas Delgadas</a></h4>
+            <p class="au"><strong>J Carrasquilla</strong>, J García-Sucerquia, D Hincapié</p>
+            <p class="ve">Revista Colombiana de Física 36, 251–254 (2004)</p>
+            
+          </article>
+        </div>
+      </div>
+      <div class="year">
+        <h3 class="yn">2003<span class="cnt">1 paper</span></h3>
+        <div class="ylist">
+          <article class="paper">
+            <h4><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=slkzvvQAAAAJ&cstart=100&pagesize=100&sortby=pubdate&citation_for_view=slkzvvQAAAAJ:zYLM7Y9cAGgC">OPTIMIZACIÓN DE LA VISIBILIDAD DE LAS FRANJAS DE ORRELACIÓN EN LA INTERFEROMETRÍA DIGITAL DE PATRONES DE SPECKLE (DSPI)</a></h4>
+            <p class="au">D Hincapié, J García-Sucerquia, <strong>J Carrasquilla</strong></p>
+            <p class="ve">Revista Colombiana de Física 35 (2003)</p>
+            
+          </article>
+        </div>
+      </div>
+      </details>
+    </div>
+  </section>
+
+  <section id="teaching" class="block">
+    <h2>Teaching</h2>
+    <div class="content cols">
+      <div class="item">
+        <h3>Quantum Mechanics I</h3>
+        <p class="meta">Autumn semester 2026, lecturer Juan Carrasquilla, <a href="https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=203243&amp;semkez=2026W&amp;ansicht=LEHRVERANSTALTUNGEN&amp;lang=en">402-0205-00L</a></p>
+        <p>Introduction to single-particle quantum mechanics, from the general structure of quantum theory to the harmonic oscillator, the hydrogen atom and perturbation theory.</p>
+      </div>
+      <div class="item">
+        <h3>Computational Quantum Physics</h3>
+        <p class="meta">Spring semesters 2025 and 2026, lecturer Juan Carrasquilla, <a href="https://www.vvz.ethz.ch/Vorlesungsverzeichnis/lerneinheit.view?lerneinheitId=199025&amp;semkez=2026S&amp;ansicht=LEHRVERANSTALTUNGEN&amp;lang=en">402-0810-00L</a></p>
+        <p>Simulation methods for quantum systems, with an emphasis on many-body problems: Hartree-Fock and density functional theory, exact diagonalization, matrix product states and quantum Monte Carlo.</p>
+      </div>
+      <p class="todo">Still to add: exercise classes taught by group members, and past Master's thesis topics.</p>
+    </div>
+  </section>
+
+  <section id="events" class="block">
+    <h2>Events</h2>
+    <div class="content">
+      <div class="hack">
+        <p class="status">In preparation</p>
+        <h3>AI for Physics Hackathon</h3>
+        <p class="meta">ETH Zurich and University of Zurich</p>
+        <p>A two-day event, planned with colleagues at the University of Zurich. Researchers bring open problems from their own work, and teams of students and postdocs work on them with current AI tools.</p>
+      </div>
+      <div class="cols">
+        <div class="item">
+          <h3>Talks at the APS March Meeting</h3>
+          <ul class="talks"><li><span class="yr">2026</span><span><strong>Reja Wilke</strong>, <a href="https://meetings-archive.aps.org/smt/2026/mar-g42/">Data-Driven Pretraining of Time-Dependent Neural Quantum States</a></span></li><li><span class="yr">2025</span><span><strong>Matija Medvidović</strong>, <a href="https://meetings-archive.aps.org/smt/2025/mar-l37/">Adiabatic transport of neural network quantum states</a></span></li></ul>
+        </div>
+        <div class="item">
+          <h3>Group meetings</h3>
+          <p>The group meets regularly for research talks and discussions.</p>
+        </div>
+      </div>
+      <p class="todo">Still to add: other talks and posters; guest speakers, dates and talk titles; seminars the group organises or hosts.</p>
+    </div>
+  </section>
+
+  <section id="join" class="block">
+    <h2>Join us</h2>
+    <div class="content cols">
+      <div class="item"><h3>Master's theses</h3><p>We supervise Master's theses in computational quantum physics and machine learning. Ask <a href="https://www.phys.ethz.ch/the-department/people/person-detail.jcarrasquill.html">Juan Carrasquilla</a> about current projects.</p></div>
+      <div class="item"><h3>PhD and postdoc positions</h3><p>Open positions are posted on the <a href="https://jobs.ethz.ch/">ETH job portal</a>.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p><strong>Quantum AI Lab</strong>, Institute for Theoretical Physics, ETH Zurich, Wolfgang-Pauli-Strasse 27, 8093 Zurich</p>
+  <p>Draft for group feedback, 1 October 2026. Sources: ETH people directory, Google Scholar, arXiv, Crossref, ETH course catalogue, APS meeting archive, Collegium Helveticum. Photos: ETH pages, members' own websites, LinkedIn, GitHub and Google Scholar profiles.</p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
