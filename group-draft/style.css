@@ -148,6 +148,9 @@ h2 { margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spa
 .talks .yr { color: var(--muted); }
 .seminar { margin: 0 0 40px; }
 .seminar > h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; }
+.seminar > h3 a { color: var(--ink); }
+.seminar > h3 a:hover { color: var(--blue); }
+.seminar .intro { margin: 0 0 4px; max-width: 70ch; }
 .sub-h { margin: 22px 0 6px; font-size: 15px; font-weight: 600; color: var(--muted); }
 .sem { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .sem li { display: grid; grid-template-columns: 118px 1fr; gap: 18px; padding: 11px 0; border-bottom: 1px solid var(--line); }
