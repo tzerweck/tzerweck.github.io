@@ -145,6 +145,8 @@ h2 { margin: 0; font-size: 30px; line-height: 1.15; font-weight: 700; letter-spa
 .seminar > h3 a { color: var(--ink); }
 .seminar > h3 a:hover { color: var(--blue); }
 .seminar .intro { margin: 0 0 4px; max-width: 70ch; }
+.ext { display: inline-block; width: 0.6em; height: 0.6em; margin-left: 0.28em; vertical-align: 0.05em; }
+.nw { white-space: nowrap; }
 .seminar .none { margin: 0; padding: 11px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 15px; color: var(--muted); }
 .sem .sw strong { font-weight: 600; color: var(--ink); }
 .past > summary { margin-top: -8px; }
